@@ -4,6 +4,16 @@ import { wixAssets } from './wixAssets.js'
 // Wix-hosted images below are temporary until the original files are copied to GitHub.
 export const projects = [
   {
+    slug: 'bullet-tounge',
+    title: 'Bullet Tounge',
+    category: 'Digitalt design / Kode',
+    year: '',
+    description: 'Et farverigt digitalt eksperiment med typografi, karakterdesign og forskellige farvevariationer.',
+    image: '',
+    imageAlt: 'Bullet Tounge — digitalt karakterdesign',
+    gallery: []
+  },
+  {
     slug: 'blender',
     title: 'Blender',
     category: '3D / Eksperimenter',
