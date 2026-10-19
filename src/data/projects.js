@@ -6,12 +6,24 @@ export const projects = [
   {
     slug: 'bufferlo',
     title: 'Bufferlo',
-    category: 'Projekt',
+    category: 'Visuel identitet / Branding',
     year: '',
-    description: '',
-    image: '',
-    imageAlt: 'Bufferlo',
-    gallery: []
+    description: 'Visuel identitet med navnetræk, bomærke, typografi, farver og digitale anvendelser.',
+    image: 'https://static.wixstatic.com/media/757f8b_8a6ee14395ee4e28bc2c281e9c34203f~mv2.png',
+    imageAlt: 'Bufferlo — visuel identitet',
+    gallery: [
+      { src: 'https://static.wixstatic.com/media/757f8b_2e4fd779c16345a582d881fe00897398~mv2.png', alt: 'Bufferlo navnetræk og tagline' },
+      { src: 'https://static.wixstatic.com/media/757f8b_ebc1b6094ac247b7b31e7c1980c9a008~mv2.png', alt: 'Bufferlo bomærke' },
+      { src: 'https://static.wixstatic.com/media/757f8b_988313471ed94ec09199cc8dbb9d607c~mv2.png', alt: 'Bufferlo typografi' },
+      { src: 'https://static.wixstatic.com/media/757f8b_06cc0c5926bd42ff8373d58d7543acab~mv2.png', alt: 'Bufferlo farver' },
+      { src: 'https://static.wixstatic.com/media/757f8b_e0d9ca37d70244558e1e928e20e6a2f9~mv2.png', alt: 'Bufferlo visuelt koncept' },
+      { src: 'https://static.wixstatic.com/media/757f8b_956010035fcc4e859bc4a9782e054e7b~mv2.png', alt: 'Bufferlo præsentation' },
+      { src: 'https://static.wixstatic.com/media/757f8b_636678fe9d0442128788b50130775e98~mv2.png', alt: 'Bufferlo præsentation' },
+      { src: 'https://static.wixstatic.com/media/757f8b_7d8e934cc5f84a2cb5b2b980d5ae3c56~mv2.png', alt: 'Bufferlo præsentation' },
+      { src: 'https://static.wixstatic.com/media/757f8b_766ca421e6744a9b86677268ce86bcdc~mv2.png', alt: 'Bufferlo anvendelse' },
+      { src: 'https://static.wixstatic.com/media/757f8b_b1d22dd416264968bceec65c37a4966a~mv2.png', alt: 'Bufferlo anvendelse' },
+      { src: 'https://static.wixstatic.com/media/757f8b_6848ceb7d13245ab8f25b22353d3f6c0~mv2.png', alt: 'Bufferlo anvendelse' }
+    ]
   },
   {
     slug: 'while-in-battle',
