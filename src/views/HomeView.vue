@@ -1,55 +1,66 @@
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { wixAssets } from '../data/wixAssets.js'
 import { projects } from '../data/projects.js'
-const previews = [
-  { number: '01', label: '3D / Visuelt eksperiment', image: wixAssets.blenderIsland, alt: '3D-illustration af en ø' },
-  { number: '02', label: '3D / Udforskning', image: wixAssets.blenderIslandWide, alt: 'Bred 3D-illustration af en ø' }
-]
-let animation
-let handlePointerMove
-let handlePointerLeave
+gsap.registerPlugin(ScrollTrigger)
+
+const hero = ref(null)
+const reveal = ref(null)
+const title = ref(null)
+const hovered = ref(false)
+const pointer = ref({ x: 0, y: 0 })
+let context
+let moveHandler
+
+function movePreview(event) {
+  pointer.value = { x: event.clientX, y: event.clientY }
+}
 onMounted(() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-  const hero = document.querySelector('.hero')
-  const lines = document.querySelectorAll('.hero-title .line')
-  handlePointerMove = (event) => {
-    const rect = hero.getBoundingClientRect()
-    const x = (event.clientX - rect.left) / rect.width - .5
-    const y = (event.clientY - rect.top) / rect.height - .5
-    gsap.to(lines[0], { x: x * 34, y: y * 16, duration: .9, ease: 'power3.out', overwrite: 'auto' })
-    gsap.to(lines[1], { x: -x * 48, y: -y * 20, duration: 1.1, ease: 'power3.out', overwrite: 'auto' })
-  }
-  handlePointerLeave = () => gsap.to(lines, { x: 0, y: 0, duration: .9, ease: 'power3.out', overwrite: 'auto' })
-  if (window.matchMedia('(pointer: fine)').matches) {
-    hero.addEventListener('pointermove', handlePointerMove)
-    hero.addEventListener('pointerleave', handlePointerLeave)
-  }
-  animation = gsap.timeline({ defaults: { ease: 'power3.out' } })
-    .from('.hero-kicker', { y: 20, opacity: 0, duration: .7 })
-    .from('.hero-title .line', { yPercent: 110, duration: 1.2, stagger: .16 }, '-=.4')
-    .from('.hero-bottom', { y: 20, opacity: 0, duration: .8 }, '-=.5')
+  context = gsap.context(() => {
+    gsap.from('.type-line', { yPercent: 115, duration: 1.4, stagger: .12, ease: 'expo.out' })
+    gsap.from('.hero-meta', { opacity: 0, y: 18, duration: 1, delay: .45, ease: 'power2.out' })
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: hero.value, start: 'top top', end: '+=110%', scrub: 1, pin: true, anticipatePin: 1 }
+    })
+    tl.to('.type-line-first', { xPercent: -24, rotation: -3, ease: 'none' }, 0)
+      .to('.type-line-second', { xPercent: 22, rotation: 3, ease: 'none' }, 0)
+      .fromTo('.hero-artwork', { scale: .35, autoAlpha: 0, rotation: -12 }, { scale: 1, autoAlpha: 1, rotation: 0, ease: 'none' }, .08)
+      .to('.hero-type', { opacity: .18, ease: 'none' }, .62)
+    gsap.from('.archive-image', {
+      y: 110, opacity: 0, stagger: .18, duration: 1.2, ease: 'power3.out',
+      scrollTrigger: { trigger: reveal.value, start: 'top 75%' }
+    })
+  }, hero.value)
 })
-onUnmounted(() => {
-  animation?.kill()
-  const hero = document.querySelector('.hero')
-  if (hero && handlePointerMove) hero.removeEventListener('pointermove', handlePointerMove)
-  if (hero && handlePointerLeave) hero.removeEventListener('pointerleave', handlePointerLeave)
-})
+onUnmounted(() => { context?.revert() })
 </script>
+
 <template>
-  <section class="hero">
-    <div class="hero-topline"><p class="eyebrow hero-kicker">Alberte Stærmose <span class="topline-divider">/</span> Portfolio</p><span class="hero-edition">Index / 2026</span></div>
-    <h1 class="hero-title" aria-label="Alberte Stærmose"><span class="line-mask"><span class="line">Alberte</span></span><span class="line-mask"><span class="line"><em>Stærmose</em><span class="hero-period">.</span></span></span></h1>
-    <div class="hero-bottom"><p>Et visuelt univers med plads til idéer, form, farver og eksperimenter.</p><a href="#arbejde" class="scroll-cue" aria-label="Gå til arbejdet"><span>Udforsk arbejdet</span><span class="scroll-arrow">↘</span></a></div>
+  <section ref="hero" class="type-hero">
+    <div class="hero-meta"><span>ALBERTE STÆRMOSE</span><span>INDEPENDENT PORTFOLIO — 2026</span></div>
+    <h1 ref="title" class="hero-type" aria-label="Alberte Stærmose">
+      <span class="type-clip"><span class="type-line type-line-first">ALBERTE</span></span>
+      <span class="type-clip"><span class="type-line type-line-second">STÆRMOSE</span></span>
+    </h1>
+    <div class="hero-artwork"><img :src="wixAssets.blenderIsland" alt="Eksperimentel 3D-illustration fra Albertes arkiv" /></div>
+    <div class="hero-foot hero-meta"><span>DESIGN / FORM / EKSPERIMENTER</span><a href="#arbejde">SCROLL FOR AT UDFORSKE ↓</a></div>
   </section>
-  <section id="arbejde" class="projects" aria-labelledby="projects-heading">
-    <div class="section-heading"><div><p class="eyebrow">01 / Udforsk</p><h2 id="projects-heading">Noget jeg har lavet.</h2></div><span class="section-count">Arbejde / eksperimenter</span></div>
-    <div class="project-grid asset-grid">
-      <figure v-for="item in previews" :key="item.number" class="asset-card">
-        <div class="asset-image"><img :src="item.image" :alt="item.alt" loading="lazy" /><span class="asset-number">{{ item.number }}</span></div>
-        <figcaption><span>{{ item.label }}</span><span>↗</span></figcaption>
+
+  <section id="arbejde" ref="reveal" class="type-archive">
+    <div class="archive-heading"><span>01 — ARKIV</span><h2>Arbejder<span class="archive-dot">.</span></h2><span>ET UDVALG FRA MIT VISUELLE ARKIV</span></div>
+    <div class="archive-grid">
+      <figure class="archive-entry archive-entry-one">
+        <div class="archive-image" @pointerenter="hovered = true" @pointerleave="hovered = false" @pointermove="movePreview">
+          <img :src="wixAssets.blenderIslandWide" alt="Bred 3D-illustration fra Albertes visuelle arkiv" loading="lazy" />
+        </div>
+        <figcaption><span>001 / 3D-STUDIE</span><span>VISUELT ARKIV</span></figcaption>
+      </figure>
+      <figure class="archive-entry archive-entry-two">
+        <div class="archive-image"><img :src="wixAssets.gradientSquare" alt="Grafisk gradient fra Albertes visuelle arkiv" loading="lazy" /></div>
+        <figcaption><span>002 / FARVE-STUDIE</span><span>VISUELT ARKIV</span></figcaption>
       </figure>
     </div>
     <div v-if="projects.length" class="project-grid real-projects">
@@ -59,8 +70,10 @@ onUnmounted(() => {
       </RouterLink>
     </div>
   </section>
-  <section class="about-preview" aria-labelledby="about-heading">
-    <div><p class="eyebrow">02 / Bag skærmen</p><h2 id="about-heading">Hej, jeg er<br><em>Alberte.</em></h2><p>Velkommen til mit kreative hjørne af internettet. Her samler jeg visuelle idéer, projekter og eksperimenter.</p></div>
-    <div class="portrait-wrap"><img :src="wixAssets.portrait" alt="Portræt fra Albertes portfolio" loading="lazy" /></div>
+
+  <section class="type-about">
+    <div class="about-index">02 — OM</div>
+    <div class="about-message"><h2>HEJ.<br />JEG ER<br />ALBERTE.</h2><p>Et sted til mit arbejde, mine idéer og det, der endnu ikke har fundet sin form.</p></div>
+    <img :src="wixAssets.portrait" alt="Portræt fra Albertes portfolio" loading="lazy" />
   </section>
 </template>
