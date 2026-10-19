@@ -4,6 +4,16 @@ import { wixAssets } from './wixAssets.js'
 // Wix-hosted images below are temporary until the original files are copied to GitHub.
 export const projects = [
   {
+    slug: 'tuborg',
+    title: 'Tuborg',
+    category: 'Digitalt design / Motion',
+    year: '',
+    description: 'Et digitalt visuelt eksperiment med illustration, kode og bevægelse.',
+    image: '',
+    imageAlt: 'Tuborg — digitalt design',
+    gallery: []
+  },
+  {
     slug: 'sonja',
     title: 'Sonja',
     category: 'Branding / Visuel identitet',
