@@ -4,6 +4,16 @@ import { wixAssets } from './wixAssets.js'
 // Wix-hosted images below are temporary until the original files are copied to GitHub.
 export const projects = [
   {
+    slug: 'politiken-puls',
+    title: 'Politiken Puls',
+    category: 'Visuel identitet / Konceptudvikling',
+    year: '2025',
+    description: 'Et visuelt identitets- og konceptprojekt med fokus på målgruppe, positionering, typografi, farver og grafisk retning.',
+    image: '',
+    imageAlt: 'Politiken Puls — visuel identitet',
+    gallery: []
+  },
+  {
     slug: 'bullet-tounge',
     title: 'Bullet Tounge',
     category: 'Digitalt design / Kode',
