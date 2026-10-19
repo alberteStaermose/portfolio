@@ -69,3 +69,17 @@
 @media(max-width:800px){.type-hero{min-height:500px;height:80svh}.hero-type{font-size:clamp(4rem,17vw,10rem)}.hero-artwork{inset:20% 5% 16%}.archive-heading{grid-template-columns:1fr}.archive-heading h2{font-size:clamp(4rem,15vw,9rem)}.archive-heading>span:last-child{text-align:left}.archive-grid{gap:2rem}.type-about{grid-template-columns:1fr 1fr}.about-index{grid-column:1/-1}}
 @media(max-width:540px){.hero-meta span:last-child{display:none}.hero-foot{align-items:end}.hero-foot span{max-width:8rem}.hero-type{font-size:17vw}.archive-grid{grid-template-columns:1fr}.archive-entry-two{margin-top:3rem;width:75%;margin-left:auto}.type-about{grid-template-columns:1fr}.type-about img{max-width:70%;margin-left:auto}}
 @media(prefers-reduced-motion:reduce){.hero-artwork{visibility:visible;opacity:.75;transform:none!important}.type-line{transform:none!important}.archive-image img{transition:none}}
+
+/* 04 — Restrained motion / editorial polish */
+.type-hero{min-height:600px;height:calc(100svh - 76px)}
+.hero-type{font-weight:600;letter-spacing:-.095em}
+.type-line{will-change:auto}
+.hero-artwork{inset:auto 9% 14% auto;width:clamp(110px,17vw,260px);height:clamp(110px,17vw,260px);z-index:2;opacity:0;visibility:hidden}
+.hero-artwork img{filter:none;object-fit:contain}
+.archive-image img{transition:transform 1.1s cubic-bezier(.22,1,.36,1)}
+.archive-entry:hover img{transform:scale(1.025)}
+.archive-heading h2{font-weight:600}
+.about-message h2{font-weight:600}
+@media(max-width:800px){.type-hero{height:80svh;min-height:480px}.hero-artwork{inset:auto 7% 18% auto;width:22vw;height:22vw}}
+@media(max-width:540px){.hero-artwork{width:29vw;height:29vw;bottom:22%;right:8%}}
+@media(prefers-reduced-motion:reduce){.hero-artwork{opacity:1;visibility:visible}}
