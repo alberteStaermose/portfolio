@@ -4,7 +4,7 @@
     <header class="site-header">
       <RouterLink class="wordmark" to="/">Alberte Stærmose</RouterLink>
       <nav aria-label="Hovednavigation">
-        <RouterLink to="/#arbejde" @click="scrollToWork">Projekter</RouterLink>
+        <RouterLink to="/" @click="scrollToWork">Projekter</RouterLink>
         <a href="https://www.xn--albertestrmose-8ib.dk/" target="_blank" rel="noopener noreferrer">Nuværende portfolio ↗</a>
       </nav>
     </header>
