@@ -4,6 +4,16 @@ import { wixAssets } from './wixAssets.js'
 // Wix-hosted images below are temporary until the original files are copied to GitHub.
 export const projects = [
   {
+    slug: 'samyang',
+    title: 'Samyang',
+    category: 'Visuel identitet / Branding',
+    year: '2025',
+    description: 'Et visuelt identitetsprojekt med research, strategi, logoudvikling, farver og grafiske elementer.',
+    image: '',
+    imageAlt: 'Samyang — visuel identitet',
+    gallery: []
+  },
+  {
     slug: 'rf-pantsystem',
     title: 'RF Pantsystem',
     category: 'Koncept / Visuel kommunikation',
