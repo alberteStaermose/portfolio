@@ -4,6 +4,16 @@ import { wixAssets } from './wixAssets.js'
 // Wix-hosted images below are temporary until the original files are copied to GitHub.
 export const projects = [
   {
+    slug: 'valoer',
+    title: 'Valør',
+    category: 'Visuel identitet / Motion',
+    year: '',
+    description: 'Et visuelt projekt med billedmateriale og en animeret logoidentitet.',
+    image: '',
+    imageAlt: 'Valør — visuel identitet og logoanimation',
+    gallery: []
+  },
+  {
     slug: 'tuborg',
     title: 'Tuborg',
     category: 'Digitalt design / Motion',
