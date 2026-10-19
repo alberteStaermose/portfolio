@@ -4,6 +4,16 @@ import { wixAssets } from './wixAssets.js'
 // Wix-hosted images below are temporary until the original files are copied to GitHub.
 export const projects = [
   {
+    slug: 'sonja',
+    title: 'Sonja',
+    category: 'Branding / Visuel identitet',
+    year: '',
+    description: 'Et identitetsprojekt med strategi, positionering, logo, farver, billedstil, tone of voice og kommunikation på tværs af menukort og sociale medier.',
+    image: '',
+    imageAlt: 'Sonja — visuel identitet',
+    gallery: []
+  },
+  {
     slug: 'samyang',
     title: 'Samyang',
     category: 'Visuel identitet / Branding',
