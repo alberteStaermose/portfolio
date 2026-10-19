@@ -8,14 +8,35 @@ const previews = [
   { number: '02', label: '3D / Udforskning', image: wixAssets.blenderIslandWide, alt: 'Bred 3D-illustration af en ø' }
 ]
 let animation
+let handlePointerMove
+let handlePointerLeave
 onMounted(() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  const hero = document.querySelector('.hero')
+  const lines = document.querySelectorAll('.hero-title .line')
+  handlePointerMove = (event) => {
+    const rect = hero.getBoundingClientRect()
+    const x = (event.clientX - rect.left) / rect.width - .5
+    const y = (event.clientY - rect.top) / rect.height - .5
+    gsap.to(lines[0], { x: x * 34, y: y * 16, duration: .9, ease: 'power3.out', overwrite: 'auto' })
+    gsap.to(lines[1], { x: -x * 48, y: -y * 20, duration: 1.1, ease: 'power3.out', overwrite: 'auto' })
+  }
+  handlePointerLeave = () => gsap.to(lines, { x: 0, y: 0, duration: .9, ease: 'power3.out', overwrite: 'auto' })
+  if (window.matchMedia('(pointer: fine)').matches) {
+    hero.addEventListener('pointermove', handlePointerMove)
+    hero.addEventListener('pointerleave', handlePointerLeave)
+  }
   animation = gsap.timeline({ defaults: { ease: 'power3.out' } })
     .from('.hero-kicker', { y: 20, opacity: 0, duration: .7 })
     .from('.hero-title .line', { yPercent: 110, duration: 1.2, stagger: .16 }, '-=.4')
     .from('.hero-bottom', { y: 20, opacity: 0, duration: .8 }, '-=.5')
 })
-onUnmounted(() => animation?.kill())
+onUnmounted(() => {
+  animation?.kill()
+  const hero = document.querySelector('.hero')
+  if (hero && handlePointerMove) hero.removeEventListener('pointermove', handlePointerMove)
+  if (hero && handlePointerLeave) hero.removeEventListener('pointerleave', handlePointerLeave)
+})
 </script>
 <template>
   <section class="hero">
