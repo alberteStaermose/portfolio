@@ -98,3 +98,18 @@
 .about-message h2{font-size:clamp(3.8rem,8vw,9rem);margin-bottom:4rem}
 @media(max-width:800px){.type-hero{min-height:540px;padding:2rem 5vw}.hero-type{font-size:15vw}.type-archive{padding:7rem 5vw 9rem}.archive-heading{margin-bottom:5rem}.archive-grid{gap:3rem}.archive-entry-two{margin-top:10rem}.type-about{padding:7rem 5vw}}
 @media(max-width:540px){.type-hero{min-height:500px}.hero-type{font-size:15vw}.hero-artwork{right:9%;bottom:22%;width:25vw;height:25vw}.archive-entry-two{margin-top:4rem}.type-about{padding:6rem 5vw}}
+
+/* Reusable portfolio case studies */
+.case-study{background:#f5f4f0;padding:clamp(2rem,5vw,5rem) clamp(1.5rem,6vw,7rem) 9rem}
+.case-top{display:flex;justify-content:space-between;gap:2rem;font-size:.72rem;letter-spacing:.06em}
+.case-header{padding:clamp(6rem,11vw,12rem) 0 clamp(4rem,8vw,9rem)}
+.case-header h1{font-size:clamp(4rem,11vw,13rem);line-height:.87;letter-spacing:-.095em;font-weight:600;margin:1rem 0 3rem;overflow-wrap:anywhere}
+.case-intro{max-width:40rem;font-size:clamp(1.15rem,1.8vw,1.65rem);line-height:1.5}
+.case-cover img{display:block;width:100%;max-height:85vh;object-fit:contain;background:#e8e7e1}
+.case-body{max-width:44rem;margin:clamp(5rem,9vw,10rem) auto;font-size:clamp(1.1rem,1.6vw,1.5rem);line-height:1.6}
+.case-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,4vw,5rem);margin-top:clamp(5rem,9vw,10rem)}
+.case-gallery figure{margin:0}.case-gallery figure:nth-child(3n){grid-column:1/-1}
+.case-gallery img{display:block;width:100%;height:auto}
+.case-gallery figcaption{font-size:.75rem;margin-top:.75rem}
+.case-return{display:inline-block;margin-top:8rem;border-bottom:1px solid;padding-bottom:.6rem;font-size:.75rem;letter-spacing:.08em}
+@media(max-width:600px){.case-gallery{grid-template-columns:1fr}.case-gallery figure:nth-child(3n){grid-column:auto}}
