@@ -4,6 +4,16 @@ import { wixAssets } from './wixAssets.js'
 // Wix-hosted images below are temporary until the original files are copied to GitHub.
 export const projects = [
   {
+    slug: 'rf-pantsystem',
+    title: 'RF Pantsystem',
+    category: 'Koncept / Visuel kommunikation',
+    year: '2025',
+    description: 'Et koncept for et pantsystem med visuel kommunikation på tværs af plakater, skilte og digitale kontaktpunkter.',
+    image: '',
+    imageAlt: 'RF Pantsystem — koncept og visuel kommunikation',
+    gallery: []
+  },
+  {
     slug: 'politiken-puls',
     title: 'Politiken Puls',
     category: 'Visuel identitet / Konceptudvikling',
