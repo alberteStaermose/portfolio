@@ -1,34 +1,22 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { wixAssets } from '../data/wixAssets.js'
 import { projects } from '../data/projects.js'
-gsap.registerPlugin(ScrollTrigger)
 
 const hero = ref(null)
 const reveal = ref(null)
 const title = ref(null)
-const hovered = ref(false)
-const pointer = ref({ x: 0, y: 0 })
 let context
-let moveHandler
 
-function movePreview(event) {
-  pointer.value = { x: event.clientX, y: event.clientY }
-}
 onMounted(() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
   context = gsap.context(() => {
     gsap.from('.type-line', { yPercent: 115, duration: 1.4, stagger: .12, ease: 'expo.out' })
     gsap.from('.hero-meta', { opacity: 0, y: 18, duration: 1, delay: .45, ease: 'power2.out' })
-    const tl = gsap.timeline({
-      scrollTrigger: { trigger: hero.value, start: 'top top', end: '+=110%', scrub: 1, pin: true, anticipatePin: 1 }
+    gsap.fromTo('.hero-artwork', { autoAlpha: 0 }, {
+      autoAlpha: 1, duration: 1.5, delay: .55, ease: 'power2.out'
     })
-    tl.to('.type-line-first', { xPercent: -24, rotation: -3, ease: 'none' }, 0)
-      .to('.type-line-second', { xPercent: 22, rotation: 3, ease: 'none' }, 0)
-      .fromTo('.hero-artwork', { scale: .35, autoAlpha: 0, rotation: -12 }, { scale: 1, autoAlpha: 1, rotation: 0, ease: 'none' }, .08)
-      .to('.hero-type', { opacity: .18, ease: 'none' }, .62)
     gsap.from('.archive-image', {
       y: 110, opacity: 0, stagger: .18, duration: 1.2, ease: 'power3.out',
       scrollTrigger: { trigger: reveal.value, start: 'top 75%' }
@@ -53,7 +41,7 @@ onUnmounted(() => { context?.revert() })
     <div class="archive-heading"><span>01 — ARKIV</span><h2>Arbejder<span class="archive-dot">.</span></h2><span>ET UDVALG FRA MIT VISUELLE ARKIV</span></div>
     <div class="archive-grid">
       <figure class="archive-entry archive-entry-one">
-        <div class="archive-image" @pointerenter="hovered = true" @pointerleave="hovered = false" @pointermove="movePreview">
+        <div class="archive-image">
           <img :src="wixAssets.blenderIslandWide" alt="Bred 3D-illustration fra Albertes visuelle arkiv" loading="lazy" />
         </div>
         <figcaption><span>001 / 3D-STUDIE</span><span>VISUELT ARKIV</span></figcaption>
