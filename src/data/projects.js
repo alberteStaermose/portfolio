@@ -4,6 +4,16 @@ import { wixAssets } from './wixAssets.js'
 // Wix-hosted images below are temporary until the original files are copied to GitHub.
 export const projects = [
   {
+    slug: 'while-in-battle',
+    title: 'While in Battle',
+    category: 'Kampagne / Digitalt design',
+    year: '',
+    description: 'Et visuelt kampagneprojekt med plakat, billedstil, digitalt kampagnesite og bevægelse.',
+    image: '',
+    imageAlt: 'While in Battle — kampagne og digitalt design',
+    gallery: []
+  },
+  {
     slug: 'valoer',
     title: 'Valør',
     category: 'Visuel identitet / Motion',
