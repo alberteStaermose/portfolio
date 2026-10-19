@@ -4,6 +4,16 @@ import { wixAssets } from './wixAssets.js'
 // Wix-hosted images below are temporary until the original files are copied to GitHub.
 export const projects = [
   {
+    slug: 'bufferlo',
+    title: 'Bufferlo',
+    category: 'Projekt',
+    year: '',
+    description: '',
+    image: '',
+    imageAlt: 'Bufferlo',
+    gallery: []
+  },
+  {
     slug: 'while-in-battle',
     title: 'While in Battle',
     category: 'Kampagne / Digitalt design',
