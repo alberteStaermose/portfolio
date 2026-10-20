@@ -438,3 +438,15 @@
 .case-editorial-gallery--while-in-battle .case-visual-block:nth-child(2) .case-visual-images{width:min(76%,1080px);margin:auto}
 .case-editorial-gallery--while-in-battle .case-visual-block:nth-child(3) .case-visual-images{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2vw,2.25rem)}
 @media(max-width:700px){.case-editorial-gallery--while-in-battle .case-visual-block:nth-child(2) .case-visual-images{width:100%}}
+
+/* While in Battle screenshot-specific composition, superseding generic gallery */
+@media(min-width:701px){
+.case-editorial-gallery--while-in-battle{padding-left:clamp(3rem,7vw,7.5rem);padding-right:clamp(3rem,7vw,7.5rem);gap:clamp(5rem,8vw,9rem)}
+.case-editorial-gallery--while-in-battle .case-visual-block:first-child .case-visual-images{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,2.2vw,2.5rem)}
+.case-editorial-gallery--while-in-battle .case-visual-block:first-child figure{align-self:start}
+.case-editorial-gallery--while-in-battle .case-visual-block:first-child img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+.case-editorial-gallery--while-in-battle .case-visual-block:nth-child(2){padding-top:clamp(1rem,2vw,2rem)}
+.case-editorial-gallery--while-in-battle .case-visual-block:nth-child(2) .case-visual-images{width:min(76%,1120px)}
+.case-editorial-gallery--while-in-battle .case-visual-block:nth-child(3) .case-visual-images{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,2.2vw,2.5rem)}
+}
+.case-editorial-gallery--while-in-battle .case-visual-block:first-child figure img{max-height:none}
