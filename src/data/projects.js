@@ -228,7 +228,7 @@ export const projects = [
         { subheading: "Hvad er vores personlighed?", text: "Samyang er mest af alt autentiske og inspireres af Koreas kultur. Vi er minimalistiske og stilrene for at udstråle seriøsiteten i vores produkter. Alt dette gør vi med et glimt i øjet og med klar inspiration fra den Koreanske animationsverden." }
       ] }
     ],
-    image: `${import.meta.env.BASE_URL}projects/samyang/samyangvisuelidentitet.webp`,
+    image: `${import.meta.env.BASE_URL}projects/samyang/samyangt-shirts.webp`,
     imageAlt: 'Samyang — visuel identitet',
     gallery: [
       { src: `${import.meta.env.BASE_URL}projects/samyang/samyangt-shirts.webp`, alt: 'samyang — samyangt-shirts' },
