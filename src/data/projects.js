@@ -288,7 +288,37 @@ export const projects = [
     title: 'Politiken Puls',
     category: 'Visuel identitet / Konceptudvikling',
     year: '2025',
-    description: 'Et visuelt identitets- og konceptprojekt med fokus på målgruppe, positionering, typografi, farver og grafisk retning.',
+    description: "Udfordringen for Politiken Plus er at gentænke og revitalisere et brand, der oprindeligt blev skabt i en anden tid og med et andet formål.",
+    projectType: 'Gruppeopgave',
+    role: 'Strateg og grafiker',
+    client: 'Politiken Plus',
+    sections: [
+      { heading: "CLIENTBRIEF", paragraphs: [
+        "Udfordringen for Politiken Plus er at gentænke og revitalisere et brand, der oprindeligt blev skabt i en anden tid og med et andet formål. Selvom Plus har haft stor succes i fortden og stadig tilbyder en bred vifte af fordele, er der flere centrale problemer, der skal adresseres. Målet er at fastlægge en klar, værdibaseret retning, der ikke blot fastholder eksisterende abonnenter, men også tiltrækker nye segmenter, især målgruppen i alderen 30-45 år, der viser interesse for Politiken som medie.",
+        "Drømmen er at gøre Plus til en central del af abonnenternes liv, hvor de ikke bare modtager fordele, men også føler sig som en del af et meningsfuldt fællesskab. Politiken Plus skal være det sted, hvor kultur, kvalitet og fællesskab mødes, og hvor abonnenterne kan udleve deres drømme og interesser i både fysiske og digitale verdener."
+      ] },
+      { heading: "RESEARCH OG PROCES", paragraphs: [
+        "Vi startede hele projektet ud med en dybdegående research som vi strukturerede ud fra det vi kalder Jhonsons 4C'er, Client, Consumer, Culture og Categori. Dette indbar en masse kvalitativ og kvantitav data-indsamling i form af deskresearch, interviews, spørgeskemaer og observationer.",
+        "Ud fra vores research lavede vi en ny brandstrategi til Politiken, som ligger til grund for den nye verbale og visuelle identitet vi har udviklet til Politiken Plus. Udover dette valgte vi at ændre navnet fra Politiken \"Plus\" til Politiken \"Puls\"."
+      ] },
+      { heading: "INSIGHT OG LØSNING", paragraphs: [
+        "Ud fra vores research kom vi frem til 4 insights:",
+        "Der er en hul i markedet for at være en inspirerende univers, hvor fordelene er særlig kurateret.",
+        "Målgruppen er travle og udbrændte, og søger aktiviteter, som beriger og opfylder et selvreliserenede behov i en ensartet og praktisk hverdag.",
+        "Der er en stigende tendens til at tage stilling til sig selv i en kompleks og poleret verden , men det er dyrt.",
+        "På trods af en klar rød tråd mellem Politiken.dk og PolitikenPlus.dk, så er det svært at finde information om, og generelt finde et link til PolitikenPlus på Politiken.dk.",
+        "Disse insights har vi brugt til at udvikle en ny brandstrategi, en tone of voice og en tagline, og ud fra det udviklet en ny visuel identitet og en prototype til et nyt site."
+      ] },
+      { heading: "BRANDSTRATEGI", paragraphs: [
+        { subheading: "Hvad gør vi og hvordan gør vi det?", text: "Tilbyde et overskueligt, tilgængeligt og attraktivt fordelsunivers til politiken." },
+        { subheading: "Hvad er vores vigtigste værdier?", text: "Humor, relaterbare med et glimt i øjet\nOrienteret, opdateret og nysgerrige\nTilgængelighed, overskueligt og intuitiv" },
+        { subheading: "Hvem er vi her for?", text: "De reflekterede og selvbevidste individer, som er nysgerrige, men øver sig i at prioritere sig selv og finde alternative pusterum i en triviel hverdag." },
+        { subheading: "Hvorfor er vi her?", text: "Følg din puls" },
+        { subheading: "Vores ambition", text: "Gøre kultur mere tilgængelig uden at gå på kompromis." },
+        { subheading: "Hvad skiller os ud?", text: "Kommunikation med en humoristisk tilgang i et visuelt inspirerende fordelsunivers med relevans." },
+        { subheading: "Hvad er vores personlighed?", text: "Gennemskuelige, legende, inspirerende, farverige og aktuelle" }
+      ] }
+    ],
     image: `${import.meta.env.BASE_URL}projects/politiken-puls/hero-page.webp`,
     imageAlt: 'Politiken Puls — visuel identitet',
     gallery: [
