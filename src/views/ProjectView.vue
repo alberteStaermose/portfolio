@@ -12,7 +12,7 @@ const project = computed(() => projects.find(item => item.slug === route.params.
     <header class="case-header">
       <p class="eyebrow">{{ project.category }}</p>
       <h1>{{ project.title }}</h1>
-      <p v-if="project.description" class="case-intro">{{ project.description }}</p>
+      <p v-if="project.description && !project.sections?.length" class="case-intro">{{ project.description }}</p>
     </header>
     <div v-if="project.image" class="case-cover"><img :src="project.image" :alt="project.imageAlt || project.title" /></div>
     <div v-if="project.projectType || project.role || project.client" class="case-meta">
