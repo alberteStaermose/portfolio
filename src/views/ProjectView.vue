@@ -20,13 +20,14 @@ const coverSrc = computed(() => {
 const openingSections = computed(() => ['rf-pantsystem','samyang','politiken-puls','while-in-battle','blender'].includes(project.value?.slug) ? project.value.sections?.slice(0,project.value.slug === 'blender' ? 2 : 3) : introductorySections.value)
 const editorialVisuals = computed(() => {
  if(project.value?.slug === 'samyang') return [
-  {layout:'wide',images:['samyanglogo']},
-  {layout:'wide',images:['samyanglogos']},
-  {layout:'wide',images:['samyanggrafik']},
-  {layout:'wide',images:['samyangnuddel']},
-  {layout:'wide',images:['samyangfrefter']},
+  {layout:'samyang-mascot',images:['samyanglogo']},
+  {layout:'samyang-blueboard',images:['samyanglogos']},
+  {layout:'samyang-wordmarks',images:['samyanggrafik']},
+  {layout:'samyang-bowls',images:['samyangnuddel']},
   {layout:'copy',heading:'NUDDELINDPAKNING',paragraphs:project.value.sections?.find(s=>s.heading==='NUDDELINDPAKNING')?.paragraphs || []},
-  {layout:'strategy',heading:'BRANDSTRATEGI',paragraphs:project.value.sections?.find(s=>s.heading==='BRANDSTRATEGI')?.paragraphs || []}
+  {layout:'samyang-packaging',images:['samyangfrefter']},
+  {layout:'strategy',heading:'BRANDSTRATEGI',paragraphs:project.value.sections?.find(s=>s.heading==='BRANDSTRATEGI')?.paragraphs || []},
+  {layout:'samyang-identity',images:['samyanglogos']}
  ]
  if(project.value?.slug === 'politiken-puls') return [
   {layout:'politiken-logo',images:['politikenlogo']},
