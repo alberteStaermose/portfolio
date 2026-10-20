@@ -12,6 +12,7 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
   <article v-if="project" class="case-study">
     <div class="case-top"><RouterLink to="/#arbejde">← TILBAGE TIL ARKIVET</RouterLink><span>{{ project.year || 'VISUELT ARKIV' }}</span></div>
     <div v-if="project.image" class="case-cover"><img :src="project.image" :alt="project.imageAlt || project.title" /></div>
+    <div class="case-content-surface">
     <div class="case-introduction">
       <header class="case-header">
         <p class="eyebrow">{{ project.category }}</p>
@@ -49,6 +50,7 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
       <a v-if="project.prototypeUrl" :href="project.prototypeUrl" target="_blank" rel="noopener noreferrer">SE DEN KODEDE PROTOTYPE ↗</a>
     </section>
     <RouterLink class="case-return" to="/">← SE FLERE PROJEKTER</RouterLink>
+    </div>
   </article>
   <section v-else class="project-detail"><h1>Projektet blev ikke fundet</h1><RouterLink to="/">← Tilbage til forsiden</RouterLink></section>
 </template>
