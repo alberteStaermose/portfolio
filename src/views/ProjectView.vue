@@ -8,8 +8,8 @@ const introductorySections = computed(() => ['while-in-battle', 'sonja'].include
 const sonjaSections = computed(() => project.value?.slug === 'sonja' ? project.value.sections?.slice(3) : [])
 const sonjaImage = (name) => project.value?.gallery?.find(item => typeof item !== 'string' && item.src.endsWith('/' + name + '.webp'))
 const sonjaVisuals = computed(() => ['sonjalogo2','sonjatagline','sonjagrafik','sonjainsta','sonjamenu'].map(sonjaImage).filter(Boolean))
-const sonjaBrandVisuals = computed(() => ['sonjaidentitet','sonjafarver','sonjastrategi','sonjastrategi1','sonjastrategi2','sonjastrategi3','sonjabilledstil','sonjacitat','sonjalogoinspo','sonjalogo-2','sonjainsta-2','sonjainsights','sonjamanifest','sonjapositionering','sonjasomeplan','sonjatoneofvoice'].map(sonjaImage).filter(Boolean))
-const galleryItems = computed(() => project.value?.slug === 'sonja' ? project.value.gallery?.filter(item => ![...sonjaVisuals.value,...sonjaBrandVisuals.value].includes(item)) : project.value?.gallery)
+const sonjaBrandVisuals = computed(() => ['sonjaidentitet'].map(sonjaImage).filter(Boolean))
+const galleryItems = computed(() => project.value?.slug === 'sonja' ? [] : project.value?.gallery)
 const prototypeSection = computed(() => project.value?.slug === "while-in-battle" ? project.value.sections?.find(section => section.heading === "KODET PROTOTYPE PÅ KAMPGNESITE") : null)
 </script>
 
