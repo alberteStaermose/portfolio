@@ -376,3 +376,17 @@
 /* Critical fix: prevent sticky hero from resurfacing at the end of long case studies. Keep the hero in normal document flow until a bounded pinning implementation is available. */
 .case-study > .case-cover{position:relative;top:auto;z-index:0}
 .case-study > .case-content-surface{position:relative;z-index:1;margin-top:0;background:#fff}
+
+/* Café Sonja: centered identity visuals, restrained editorial rhythm and generous whitespace. */
+.sonja-visual-story{background:#fff;display:flex;flex-direction:column;align-items:center;gap:clamp(4rem,8vw,9rem);padding:clamp(3rem,6vw,6rem) var(--case-gutter)}
+.sonja-visual-story figure{width:min(100%,940px);margin:0}
+.sonja-visual-story img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+.sonja-editorial-sections{background:#fff;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(3rem,6vw,7rem);padding:clamp(4rem,8vw,8rem) var(--case-gutter)}
+.sonja-editorial-sections .case-text-section{min-width:0}
+.sonja-editorial-sections .case-text-section h2{font-size:clamp(1.2rem,1.6vw,1.7rem);font-weight:400;margin-bottom:1rem}
+.sonja-editorial-sections .case-text-section p{line-height:1.6}
+.sonja-editorial-sections .sonja-strategy{grid-column:1/-1;margin-top:clamp(2rem,4vw,4rem)}
+.sonja-strategy .sonja-section-content{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(2rem,4vw,5rem)}
+.sonja-strategy .case-subsection h3{font-weight:400}
+.sonja-visual-story--brand{padding-top:0}
+@media(max-width:700px){.sonja-editorial-sections{grid-template-columns:1fr}.sonja-editorial-sections .sonja-strategy{grid-column:1}.sonja-strategy .sonja-section-content{grid-template-columns:1fr}.sonja-visual-story{gap:3rem}}
