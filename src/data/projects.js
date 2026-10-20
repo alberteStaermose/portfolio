@@ -158,7 +158,30 @@ export const projects = [
     title: 'RF Pantsystem',
     category: 'Koncept / Visuel kommunikation',
     year: '2025',
-    description: 'Et koncept for et pantsystem med visuel kommunikation på tværs af plakater, skilte og digitale kontaktpunkter.',
+    description: "I skal i teams på jeres studieretning udvikle en ny, innovativ designløsning, et koncept eller en service til en eksisterende virksomhed, inspireret af modulets tema ”Pre-loved”.",
+    projectType: 'Gruppeopgave',
+    role: 'Konceptudvikler og grafiker',
+    client: 'Roskilde Festival',
+    sections: [
+      { heading: "CLIENTBRIEF", paragraphs: [
+        "I skal i teams på jeres studieretning udvikle en ny, innovativ designløsning, et koncept eller en service til en eksisterende virksomhed, inspireret af modulets tema ”Pre-loved”. I skal finde en eksisterende virksomhed indenfor mode- og livsstilbranchen, som I vil “samarbejde med” og bruge som afsæt for jeres løsning. I skal se nærmere på denne virksom- hed og tænke i, hvordan lige netop denne kan tilpasse sig i en (fiktiv) fremtid, hvor brugen af jomfruelige materialer ikke længere er lovlig. Vi forestiller os et fremtidsscenarie, hvor EU er kommet med en lovgivning, der forbyder produktion af produkter fremstillet af nyfremstillede råvarer og materialer. Til sidst skal I overveje, hvem der er målgruppen for jeres løsning, og hvordan I bedst kan ramme netop denne mod- tager."
+      ] },
+      { heading: "RESEARCH OG PROCES", paragraphs: [
+        "Processen for denne opgave tog inspiration i Design Thinking metoden, med en eksperimenterende og eksplorativ tilgang. Det vil sige, at der var brede rammer for, hvad vores løsning kunne være, så længe den kunne relatere sig til briefen, ”Pre-loved”, og pege på en løsning til nogle af de udfordringer, vi står overfor i verden i dag. Det kunne være små eller store tiltag; alt fra et nyt materiale, et bæredygtigt brandingtiltag, en ny service, et nyt system eller produkt. Dog var det vigtigt, at løsningen ikke blot var en abstrakt ide, men at vi sørgede for at gøre den konkret og håndgribelig ved hjælp af en fysisk eller digital prototype."
+      ] },
+      { heading: "INSIGHT OG LØSNING", paragraphs: [
+        "Ud fra en dybdegående research med deskresearch, interviews, spørgeskemaer og mobiletnografisk undersøgelse kom vi frem til 3 insights:",
+        "Der tegner sig et billede af, at kommunikationen af pantsystemet ikke er god og forstålig nok.",
+        "Det er et problem at kalde det pant, når du betaler 5 kr, men kun får 1 kr igen.",
+        "Målgruppen vi vil fokusere på er \"de unge-voksne\" da de er fremtidens festivalgæster og derfor giver mening at forme og ændre deres vaner fremfor de garvede festivalgæster.",
+        "Ud fra disse insights kom vi frem til denne problemstilling: Hvordan kan vi gennem Roskilde Festivals kommunikation og markedsføring være med til at ændre gæsternes adfærd over for, hvordan de benytter retursystemet?"
+      ] },
+      { heading: "QR-KODEN OG ORANGE LIFE", paragraphs: [
+        "Ved at scanne QR-koden på plakaten eller koppen bliver du ledt ind til en side på appen hvor du kan kan læse mere om hvordan pantsystemet fungerer, have overblik over hvor mange kopper og kander du har gemt på dit armbånd (som du kan bruge næste gang du købe noget at drikke), og se et overblik over hvor meget der er blevet pantet på festivelen.",
+        "Denne underside har vi valgt at kalde \"MY CUP\".",
+        "MY CUP er en del af det koncept vi har valgt at kalde \"Orange Life\". Ligesom Orange Feeling er et velkendt begreb, er målet at gøre Orange Life til en bæredygtig livsstil og adfærd på Roskilde Festival. Vi lavede kun MY CUP under Orange Life, så de andre MY ... er blot eksempler på hvordan man kunne vælge at udvide."
+      ] }
+    ],
     image: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfplakatorange.webp`,
     imageAlt: 'RF Pantsystem — koncept og visuel kommunikation',
     gallery: [
