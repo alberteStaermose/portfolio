@@ -42,7 +42,7 @@ const editorialVisuals = computed(() => {
   {layout:'strategy',heading:'BRANDSTRATEGI',paragraphs:project.value.sections?.find(s=>s.heading==='BRANDSTRATEGI')?.paragraphs || []}
  ]
  if(project.value?.slug === 'while-in-battle') return [
-  {layout:'pair',images:['whileplakat','whileplakatsort']},
+  {layout:'pair',images:['whileinbatlleplakat','whileplakat']},
   {layout:'wide',images:['whilestyletyle']},
   {layout:'pair',images:['whiledancer1','whiledancer2']},
   {layout:'wide',images:['whilebilledstil']},
@@ -124,7 +124,7 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
     <div v-if="project.slug === 'sonja'" class="sonja-visual-story sonja-visual-story--brand">
       <figure v-for="(item, index) in sonjaBrandVisuals" :key="index"><img :src="item.src" :alt="item.alt" loading="lazy" /></figure>
     </div>
-    <div v-if="editorialVisuals.length" class="case-editorial-gallery">
+    <div v-if="editorialVisuals.length" class="case-editorial-gallery" :class="'case-editorial-gallery--' + project.slug">
       <section v-for="(block, blockIndex) in editorialVisuals" :key="blockIndex" class="case-visual-block" :class="'case-visual-block--' + block.layout">
         <div class="case-visual-images"><figure v-for="name in block.images" :key="name"><img :src="asset(project.slug,name)" :alt="project.title + ' — ' + name" loading="lazy" /></figure></div>
         <div v-if="block.heading" class="case-visual-copy"><h2>{{ block.heading }}</h2><template v-for="(paragraph,i) in block.paragraphs" :key="i"><div v-if="typeof paragraph === 'object'" class="case-subsection"><h3>{{ paragraph.subheading }}</h3><p>{{ paragraph.text }}</p></div><p v-else>{{ paragraph }}</p></template></div>
