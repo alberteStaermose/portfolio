@@ -367,3 +367,8 @@
 .case-study{padding-bottom:0;background:#fff}
 .case-content-surface .case-introduction{border-radius:0}
 .case-content-surface .case-return{display:inline-flex;margin-top:clamp(2rem,4vw,4rem)}
+
+/* Archive cover cards: crop the frame rather than shrinking tall images into narrow strips. */
+.real-projects .project-card{display:block;min-width:0}
+.real-projects .project-card img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:center;background:#eeede9}
+.real-projects .project-meta{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
