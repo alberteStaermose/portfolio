@@ -52,7 +52,7 @@ onUnmounted(() => { context?.revert() })
       </figure>
     </div>
     <div v-if="projects.length" class="project-grid real-projects">
-      <RouterLink v-for="project in projects" :key="project.slug" :to="`/projekter/${project.slug}`" class="project-card">
+      <RouterLink v-for="project in projects.filter(p => !['tuborg', 'bullet-tounge'].includes(p.slug))" :key="project.slug" :to="`/projekter/${project.slug}`" class="project-card">
         <img v-if="project.image" :src="project.image" :alt="project.imageAlt || ''" loading="lazy" />
         <div class="project-meta"><h3>{{ project.title }}</h3><span>{{ project.year }}</span></div>
       </RouterLink>
