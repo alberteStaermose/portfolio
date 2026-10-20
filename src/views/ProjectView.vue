@@ -105,7 +105,7 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
     <section v-for="(video,index) in videoFor('after-intro')" :key="'intro-video-'+index" class="case-video-block" :class="'case-video-block--'+(video.format || 'landscape')"><h2 v-if="video.heading">{{ video.heading }}</h2><video :src="video.src" :poster="video.poster" :autoplay="video.autoplay === true" :muted="video.autoplay === true || video.muted === true" :loop="video.loop === true" controls playsinline preload="metadata"></video></section>
     <div v-if="project.body" class="case-body"><p>{{ project.body }}</p></div>
     <div v-if="project.slug === 'sonja'" class="sonja-visual-story">
-      <figure v-for="(item, index) in sonjaVisuals" :key="index"><img :src="item.src" :alt="item.alt" loading="lazy" /></figure>
+      <figure v-for="(item, index) in sonjaVisuals" :key="index" :class="'sonja-visual-story__item sonja-visual-story__item--' + index"><img :src="item.src" :alt="item.alt" loading="lazy" /></figure>
     </div>
     <div v-if="sonjaSections.length" class="sonja-editorial-sections">
       <section v-for="(section, index) in sonjaSections" :key="index" class="case-text-section" :class="{ 'sonja-strategy': section.heading === 'BRANDSTRATEGI' }">
