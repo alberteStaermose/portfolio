@@ -4,7 +4,24 @@ export const projects = [
     title: 'Bufferlo',
     category: 'Visuel identitet / Branding',
     year: '',
-    description: 'Visuel identitet med navnetræk, bomærke, typografi, farver og digitale anvendelser.',
+    description: 'Til dette skoleprojekt fik vi af CoPlus stillet en opgave der gik ud på, at vi til deres kunde, 3 (Teleco), skulle skabe et koncept, en branding og en kampgane omkring en 5G internet router.',
+    projectType: 'Gruppeopgave',
+    role: 'Projektleder, konceptuvikler og grafisk designer',
+    client: 'CoPlus / 3 (Teleco)',
+    sections: [
+      { heading: 'CLIENTBRIEF', paragraphs: [
+        'Til dette skoleprojekt fik vi af CoPlus stillet en opgave der gik ud på, at vi til deres kunde, 3 (Teleco), skulle skabe et koncept, en branding og en kampgane omkring en 5G internet router.',
+        'Hvordan vi valgte at gribe det an var meget åbent.'
+      ] },
+      { heading: 'RESEARCH OG PROCES', paragraphs: [
+        'Vi startede hele projektet ud med en dybdegående research som vi strukturerede ud fra det vi kalder 5C, Client, Consumer, Culture, Categori og Campaign. Dette indebar en masse kvalitativ og kvantitav data-indsamling i form af deskresearch, interviews, spørgeskemaer og observationer. Ud fra vores research kom vi på konceptet til Bufferlo, som står for low buffering og lavede en brandstrategi, som ligger til grund for den verbale og visuelle identitet.'
+      ] },
+      { heading: 'INSIGHT OG LØSNING', paragraphs: [
+        'Ud fra vores research udviklede vi en brandstrategi der er bygget op omkring cowboy-universet. Vi kom derfor på navnet Bufferlo, som egentlig betyder "low buffering", men også betyder bøffel og et "cowboy ord". Vi udviklede derfor også en visuel (logo, farver, font osv.) og verbal identitet inspireret af cowboy universet.',
+        'Ud fra vores research fandt vi også frem til kampagneinsighten "Kender i det når internettet er så godt, at vi snakker om det". Ud fra reasrch og kampagneinsight udviklede vi en kampagne-brief, som ligger til grund for hele kampagnen.',
+        'Vi udviklede en kampagne der indeholder outdoor reklamer, reklamefilm og SoMe-videoer'
+      ] }
+    ],
     image: `${import.meta.env.BASE_URL}projects/bufferlo/bufferlo.webp`,
     imageAlt: 'Bufferlo — visuel identitet',
     gallery: [
