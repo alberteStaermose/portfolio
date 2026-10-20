@@ -4,6 +4,8 @@ import { useRoute } from 'vue-router'
 import { projects } from '../data/projects.js'
 const route = useRoute()
 const project = computed(() => projects.find(item => item.slug === route.params.slug))
+const introductorySections = computed(() => project.value?.slug === "while-in-battle" ? project.value.sections?.slice(0, 3) : project.value?.sections)
+const prototypeSection = computed(() => project.value?.slug === "while-in-battle" ? project.value.sections?.find(section => section.heading === "KODET PROTOTYPE PÅ KAMPGNESITE") : null)
 </script>
 
 <template>
@@ -21,8 +23,8 @@ const project = computed(() => projects.find(item => item.slug === route.params.
         <div v-if="project.client"><strong>Kunden</strong><p>{{ project.client }}</p></div>
       </div>
     </div>
-    <div v-if="project.sections?.length" class="case-sections">
-      <section v-for="(section, index) in project.sections" :key="index" class="case-text-section">
+    <div v-if="introductorySections?.length" class="case-sections">
+      <section v-for="(section, index) in introductorySections" :key="index" class="case-text-section">
         <h2>{{ section.heading }}</h2>
         <template v-for="(paragraph, paragraphIndex) in section.paragraphs" :key="paragraphIndex">
           <div v-if="typeof paragraph === 'object'" class="case-subsection">
@@ -41,6 +43,11 @@ const project = computed(() => projects.find(item => item.slug === route.params.
         <figcaption v-if="item.caption">{{ item.caption }}</figcaption>
       </figure>
     </div>
+    <section v-if="prototypeSection" class="case-text-section case-prototype-section">
+      <h2>{{ prototypeSection.heading }}</h2>
+      <p v-for="(paragraph, index) in prototypeSection.paragraphs" :key="index">{{ paragraph }}</p>
+      <a v-if="project.prototypeUrl" :href="project.prototypeUrl" target="_blank" rel="noopener noreferrer">SE DEN KODEDE PROTOTYPE ↗</a>
+    </section>
     <RouterLink class="case-return" to="/">← SE FLERE PROJEKTER</RouterLink>
   </article>
   <section v-else class="project-detail"><h1>Projektet blev ikke fundet</h1><RouterLink to="/">← Tilbage til forsiden</RouterLink></section>
