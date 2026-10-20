@@ -67,7 +67,24 @@ export const projects = [
     title: 'Valør',
     category: 'Visuel identitet / Motion',
     year: '',
-    description: 'Et visuelt projekt med billedmateriale og en animeret logoidentitet.',
+    description: "Dette eksamensprojekt gik ud på at opsætte en visuel identitet, animere et navnetræk med kode, samt lave en kodet asset generator til en fiktiv kunde.",
+    projectType: 'Eksamensopgave',
+    role: 'Branddesigner og projektleder',
+    client: 'Fiktiv møbelbutik',
+    sections: [
+      { heading: "CLIENTBRIEF", paragraphs: [
+        "Dette eksamensprojekt gik ud på at opsætte en visuel identitet, animere et navnetræk med kode, samt lave en kodet asset generator til en fiktiv kunde. Vi fik tildelt en type af virksomhed ved lodtrækning og jeg trak møbelbutik."
+      ] },
+      { heading: "RESEARCH OG PROCES", paragraphs: [
+        "Jeg startede dette projekt ud med at lægge en struktureret plan for min process, hvor jeg her benyttede mig af Trello. Jeg tog et valg om at møbelbutikken skulle være en high end møbelforretning og gik så i gang med at lave en dybdegående research på konkurrenter, trends og tendenser til at finde på et koncept og udvikle en visuel identitet til møbelbutikken. Med en nøje udvalgt farvepalette gik jeg i gang med at lave illustrationer og generere billeder i Midjourney. Til sidst kodede jeg det animerede navnetræk og udviklede en asset generator i Processing."
+      ] },
+      { heading: "INSIGHT OG LØSNING", paragraphs: [
+        "Ud fra min research kom jeg frem til at en stor trend indenfor boligindretning var farver og leg og jeg baserede derfor konceptet og navnet ud fra dette og navngav butikken ud fra fagtermet \"Valør\". Tager man et kig på konkurrenternes billeder, ser man en visualisering af et perfekt opryddet hjem. Næsten for perfekt, og man kunne blive i tvivl om der overhovedet er nogen der bor sådan. Dette gør Valør op med. Derfor er Valør en møbelbutik der sælger dansk møbeldesign med fokus på farver, og på at sælge et realistisk billede af boligindretningen. Den visuelle identitet består af en farverpalette, illustrationer og et animeret navnetræk. Jeg udviklede en visuel identitet til Valør fuld af farver og leg og lavede en assetganarator hvis hovedformål er at generere forskellige mønstre til den visuelle identitet ved at stille på forskellige paramtre. Asset generatoren gjorde det muligt at udvide den grafiske palette nemt og hurtigt baseret på få grafiske elementer."
+      ] },
+      { heading: "ASSET GENERATOR", paragraphs: [
+        "Jeg kodede en asset generator der ved at stille på forskellige parametre kunne generere forskellige mønstre."
+      ] }
+    ],
     image: `${import.meta.env.BASE_URL}projects/valoer/valorsite.webp`,
     imageAlt: 'Valør — visuel identitet og logoanimation',
     gallery: [
