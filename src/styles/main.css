@@ -427,3 +427,14 @@
 .case-video-block--portrait video{max-width:min(420px,100%);aspect-ratio:9/16}
 .case-video-block--square video{max-width:680px;aspect-ratio:1}
 .case-video-block--landscape video{aspect-ratio:16/9}
+
+/* While in Battle — original editorial rhythm: poster / outdoor, identity board, dancer pair */
+.case-study:has(.case-editorial-gallery--while-in-battle) .case-sections{padding-bottom:clamp(3rem,5vw,5.5rem)}
+.case-editorial-gallery--while-in-battle{gap:clamp(3.5rem,6vw,6rem);padding-top:0}
+.case-editorial-gallery--while-in-battle .case-visual-block{max-width:calc(100% - 0px)}
+.case-editorial-gallery--while-in-battle .case-visual-block:first-child .case-visual-images{grid-template-columns:1fr 1fr;align-items:start;gap:clamp(1rem,2vw,2.25rem)}
+.case-editorial-gallery--while-in-battle .case-visual-block:first-child figure:first-child img{max-height:none;width:100%;object-fit:contain}
+.case-editorial-gallery--while-in-battle .case-visual-block:first-child figure:last-child img{max-height:none;width:100%;object-fit:contain}
+.case-editorial-gallery--while-in-battle .case-visual-block:nth-child(2) .case-visual-images{width:min(76%,1080px);margin:auto}
+.case-editorial-gallery--while-in-battle .case-visual-block:nth-child(3) .case-visual-images{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2vw,2.25rem)}
+@media(max-width:700px){.case-editorial-gallery--while-in-battle .case-visual-block:nth-child(2) .case-visual-images{width:100%}}
