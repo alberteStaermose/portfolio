@@ -1,7 +1,3 @@
-import { wixAssets } from './wixAssets.js'
-
-// Project content is being migrated in stages.
-// Wix-hosted images below are temporary until the original files are copied to GitHub.
 export const projects = [
   {
     slug: 'bufferlo',
@@ -9,20 +5,18 @@ export const projects = [
     category: 'Visuel identitet / Branding',
     year: '',
     description: 'Visuel identitet med navnetræk, bomærke, typografi, farver og digitale anvendelser.',
-    image: 'https://static.wixstatic.com/media/757f8b_8a6ee14395ee4e28bc2c281e9c34203f~mv2.png',
+    image: `${import.meta.env.BASE_URL}projects/bufferlo/bufferlo.webp`,
     imageAlt: 'Bufferlo — visuel identitet',
     gallery: [
-      { src: 'https://static.wixstatic.com/media/757f8b_2e4fd779c16345a582d881fe00897398~mv2.png', alt: 'Bufferlo navnetræk og tagline' },
-      { src: 'https://static.wixstatic.com/media/757f8b_ebc1b6094ac247b7b31e7c1980c9a008~mv2.png', alt: 'Bufferlo bomærke' },
-      { src: 'https://static.wixstatic.com/media/757f8b_988313471ed94ec09199cc8dbb9d607c~mv2.png', alt: 'Bufferlo typografi' },
-      { src: 'https://static.wixstatic.com/media/757f8b_06cc0c5926bd42ff8373d58d7543acab~mv2.png', alt: 'Bufferlo farver' },
-      { src: 'https://static.wixstatic.com/media/757f8b_e0d9ca37d70244558e1e928e20e6a2f9~mv2.png', alt: 'Bufferlo visuelt koncept' },
-      { src: 'https://static.wixstatic.com/media/757f8b_956010035fcc4e859bc4a9782e054e7b~mv2.png', alt: 'Bufferlo præsentation' },
-      { src: 'https://static.wixstatic.com/media/757f8b_636678fe9d0442128788b50130775e98~mv2.png', alt: 'Bufferlo præsentation' },
-      { src: 'https://static.wixstatic.com/media/757f8b_7d8e934cc5f84a2cb5b2b980d5ae3c56~mv2.png', alt: 'Bufferlo præsentation' },
-      { src: 'https://static.wixstatic.com/media/757f8b_766ca421e6744a9b86677268ce86bcdc~mv2.png', alt: 'Bufferlo anvendelse' },
-      { src: 'https://static.wixstatic.com/media/757f8b_b1d22dd416264968bceec65c37a4966a~mv2.png', alt: 'Bufferlo anvendelse' },
-      { src: 'https://static.wixstatic.com/media/757f8b_6848ceb7d13245ab8f25b22353d3f6c0~mv2.png', alt: 'Bufferlo anvendelse' }
+      { src: `${import.meta.env.BASE_URL}projects/bufferlo/start-2.webp`, alt: 'bufferlo — start-2' },
+      { src: `${import.meta.env.BASE_URL}projects/bufferlo/font.webp`, alt: 'bufferlo — font' },
+      { src: `${import.meta.env.BASE_URL}projects/bufferlo/farver.webp`, alt: 'bufferlo — farver' },
+      { src: `${import.meta.env.BASE_URL}projects/bufferlo/speciale-eksamen-2-4.webp`, alt: 'bufferlo — speciale-eksamen-2-4' },
+      { src: `${import.meta.env.BASE_URL}projects/bufferlo/speciale-eksamen-2.webp`, alt: 'bufferlo — speciale-eksamen-2' },
+      { src: `${import.meta.env.BASE_URL}projects/bufferlo/speciale-eksamen-2-2.webp`, alt: 'bufferlo — speciale-eksamen-2-2' },
+      { src: `${import.meta.env.BASE_URL}projects/bufferlo/kopi-af-3-teleco-wireless-router-4.webp`, alt: 'bufferlo — kopi-af-3-teleco-wireless-router-4' },
+      { src: `${import.meta.env.BASE_URL}projects/bufferlo/kopi-af-3-teleco-wireless-router.webp`, alt: 'bufferlo — kopi-af-3-teleco-wireless-router' },
+      { src: `${import.meta.env.BASE_URL}projects/bufferlo/kopi-af-3-teleco-wireless-router-2.webp`, alt: 'bufferlo — kopi-af-3-teleco-wireless-router-2' }
     ]
   },
   {
@@ -31,9 +25,25 @@ export const projects = [
     category: 'Kampagne / Digitalt design',
     year: '',
     description: 'Et visuelt kampagneprojekt med plakat, billedstil, digitalt kampagnesite og bevægelse.',
-    image: '',
+    image: `${import.meta.env.BASE_URL}projects/while-in-battle/whileplakat.webp`,
     imageAlt: 'While in Battle — kampagne og digitalt design',
-    gallery: []
+    gallery: [
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whileplakatsort.webp`, alt: 'while-in-battle — whileplakatsort' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whilestyletyle.webp`, alt: 'while-in-battle — whilestyletyle' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whilelightred.webp`, alt: 'while-in-battle — whilelightred' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whilelightorange.webp`, alt: 'while-in-battle — whilelightorange' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whilelightmode.webp`, alt: 'while-in-battle — whilelightmode' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whilelightgreen.webp`, alt: 'while-in-battle — whilelightgreen' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whilelightblue.webp`, alt: 'while-in-battle — whilelightblue' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whileintro.webp`, alt: 'while-in-battle — whileintro' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whiledefaultmode.webp`, alt: 'while-in-battle — whiledefaultmode' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whileinbatlleplakat.webp`, alt: 'while-in-battle — whileinbatlleplakat' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whilefysiskinstallation.webp`, alt: 'while-in-battle — whilefysiskinstallation' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whiledarkmode.webp`, alt: 'while-in-battle — whiledarkmode' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whiledancer1.webp`, alt: 'while-in-battle — whiledancer1' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whilebilledstil.webp`, alt: 'while-in-battle — whilebilledstil' },
+      { src: `${import.meta.env.BASE_URL}projects/while-in-battle/whiledancer2.webp`, alt: 'while-in-battle — whiledancer2' }
+    ]
   },
   {
     slug: 'valoer',
@@ -41,9 +51,26 @@ export const projects = [
     category: 'Visuel identitet / Motion',
     year: '',
     description: 'Et visuelt projekt med billedmateriale og en animeret logoidentitet.',
-    image: '',
+    image: `${import.meta.env.BASE_URL}projects/valoer/valorsite.webp`,
     imageAlt: 'Valør — visuel identitet og logoanimation',
-    gallery: []
+    gallery: [
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valortpe.webp`, alt: 'valoer — valortpe' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valort-shirt2.webp`, alt: 'valoer — valort-shirt2' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valort-shirt.webp`, alt: 'valoer — valort-shirt' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valorposter-4.webp`, alt: 'valoer — valorposter-4' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valoroutdoor.webp`, alt: 'valoer — valoroutdoor' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valoroutdoor3.webp`, alt: 'valoer — valoroutdoor3' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valoroutdoor2.webp`, alt: 'valoer — valoroutdoor2' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valorlogoposneg.webp`, alt: 'valoer — valorlogoposneg' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valorgenereret2.webp`, alt: 'valoer — valorgenereret2' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valorgenereret1.webp`, alt: 'valoer — valorgenereret1' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valorcomputer.webp`, alt: 'valoer — valorcomputer' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valorboxes.webp`, alt: 'valoer — valorboxes' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valorbilleder1.webp`, alt: 'valoer — valorbilleder1' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valorbilleder2.webp`, alt: 'valoer — valorbilleder2' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valorasset1.webp`, alt: 'valoer — valorasset1' },
+      { src: `${import.meta.env.BASE_URL}projects/valoer/valorassetgenerator.webp`, alt: 'valoer — valorassetgenerator' }
+    ]
   },
   {
     slug: 'tuborg',
@@ -61,9 +88,36 @@ export const projects = [
     category: 'Branding / Visuel identitet',
     year: '',
     description: 'Et identitetsprojekt med strategi, positionering, logo, farver, billedstil, tone of voice og kommunikation på tværs af menukort og sociale medier.',
-    image: '',
+    image: `${import.meta.env.BASE_URL}projects/sonja/sonjalogo.webp`,
     imageAlt: 'Sonja — visuel identitet',
-    gallery: []
+    gallery: [
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjainsta.webp`, alt: 'sonja — sonjainsta' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjatoneofvoice.webp`, alt: 'sonja — sonjatoneofvoice' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjatagline.webp`, alt: 'sonja — sonjatagline' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjastrategi3.webp`, alt: 'sonja — sonjastrategi3' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjastrategi2.webp`, alt: 'sonja — sonjastrategi2' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjastrategi1.webp`, alt: 'sonja — sonjastrategi1' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjastrategi.webp`, alt: 'sonja — sonjastrategi' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjasomeplan.webp`, alt: 'sonja — sonjasomeplan' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjapositionering.webp`, alt: 'sonja — sonjapositionering' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjamenu.webp`, alt: 'sonja — sonjamenu' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjamanifest.webp`, alt: 'sonja — sonjamanifest' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjalogoinspo.webp`, alt: 'sonja — sonjalogoinspo' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjalogo2.webp`, alt: 'sonja — sonjalogo2' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjalogo-2.webp`, alt: 'sonja — sonjalogo-2' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjainsta-2.webp`, alt: 'sonja — sonjainsta-2' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjainsights.webp`, alt: 'sonja — sonjainsights' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjaidentitet.webp`, alt: 'sonja — sonjaidentitet' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjagrafik.webp`, alt: 'sonja — sonjagrafik' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjabilledstil.webp`, alt: 'sonja — sonjabilledstil' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjafarver.webp`, alt: 'sonja — sonjafarver' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/sonjacitat.webp`, alt: 'sonja — sonjacitat' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/skrmbillede-2025-02-13-kl-20-40-56.webp`, alt: 'sonja — skrmbillede-2025-02-13-kl-20-40-56' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/skrmbillede-2025-02-09-kl-17-12-08.webp`, alt: 'sonja — skrmbillede-2025-02-09-kl-17-12-08' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/skrmbillede-2025-02-09-kl-17-15-51.webp`, alt: 'sonja — skrmbillede-2025-02-09-kl-17-15-51' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/skrmbillede-2025-02-08-kl-14-04-13.webp`, alt: 'sonja — skrmbillede-2025-02-08-kl-14-04-13' },
+      { src: `${import.meta.env.BASE_URL}projects/sonja/skrmbillede-2025-02-13-kl-20-40-56-1808b491baaf40d6930ae21186e2b079.webp`, alt: 'sonja — skrmbillede-2025-02-13-kl-20-40-56-1808b491baaf40d6930ae21186e2b079' }
+    ]
   },
   {
     slug: 'samyang',
@@ -71,9 +125,16 @@ export const projects = [
     category: 'Visuel identitet / Branding',
     year: '2025',
     description: 'Et visuelt identitetsprojekt med research, strategi, logoudvikling, farver og grafiske elementer.',
-    image: '',
+    image: `${import.meta.env.BASE_URL}projects/samyang/samyangvisuelidentitet.webp`,
     imageAlt: 'Samyang — visuel identitet',
-    gallery: []
+    gallery: [
+      { src: `${import.meta.env.BASE_URL}projects/samyang/samyangt-shirts.webp`, alt: 'samyang — samyangt-shirts' },
+      { src: `${import.meta.env.BASE_URL}projects/samyang/samyangnuddel.webp`, alt: 'samyang — samyangnuddel' },
+      { src: `${import.meta.env.BASE_URL}projects/samyang/samyanggrafik.webp`, alt: 'samyang — samyanggrafik' },
+      { src: `${import.meta.env.BASE_URL}projects/samyang/samyanglogo.webp`, alt: 'samyang — samyanglogo' },
+      { src: `${import.meta.env.BASE_URL}projects/samyang/samyangfrefter.webp`, alt: 'samyang — samyangfrefter' },
+      { src: `${import.meta.env.BASE_URL}projects/samyang/samyanglogos.webp`, alt: 'samyang — samyanglogos' }
+    ]
   },
   {
     slug: 'rf-pantsystem',
@@ -81,9 +142,21 @@ export const projects = [
     category: 'Koncept / Visuel kommunikation',
     year: '2025',
     description: 'Et koncept for et pantsystem med visuel kommunikation på tværs af plakater, skilte og digitale kontaktpunkter.',
-    image: '',
+    image: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfplakatorange.webp`,
     imageAlt: 'RF Pantsystem — koncept og visuel kommunikation',
-    gallery: []
+    gallery: [
+      { src: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfplakatblaa.webp`, alt: 'rf-pantsystem — rfplakatblaa' },
+      { src: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfscan.webp`, alt: 'rf-pantsystem — rfscan' },
+      { src: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfsaveorswap.webp`, alt: 'rf-pantsystem — rfsaveorswap' },
+      { src: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfpladsen.webp`, alt: 'rf-pantsystem — rfpladsen' },
+      { src: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rforangelife.webp`, alt: 'rf-pantsystem — rforangelife' },
+      { src: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfplads.webp`, alt: 'rf-pantsystem — rfplads' },
+      { src: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfdonate.webp`, alt: 'rf-pantsystem — rfdonate' },
+      { src: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfapp2.webp`, alt: 'rf-pantsystem — rfapp2' },
+      { src: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfcup.webp`, alt: 'rf-pantsystem — rfcup' },
+      { src: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfbarskilt.webp`, alt: 'rf-pantsystem — rfbarskilt' },
+      { src: `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfapp.webp`, alt: 'rf-pantsystem — rfapp' }
+    ]
   },
   {
     slug: 'politiken-puls',
@@ -91,9 +164,25 @@ export const projects = [
     category: 'Visuel identitet / Konceptudvikling',
     year: '2025',
     description: 'Et visuelt identitets- og konceptprojekt med fokus på målgruppe, positionering, typografi, farver og grafisk retning.',
-    image: '',
+    image: `${import.meta.env.BASE_URL}projects/politiken-puls/hero-page.webp`,
     imageAlt: 'Politiken Puls — visuel identitet',
-    gallery: []
+    gallery: [
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/underside-wellness.webp`, alt: 'politiken-puls — underside-wellness' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/underside-dinside.webp`, alt: 'politiken-puls — underside-dinside' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/underside-fa-gang-i-trbenet.webp`, alt: 'politiken-puls — underside-fa-gang-i-trbenet' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/underside-ny-ernergi-i-godt-selskab.webp`, alt: 'politiken-puls — underside-ny-ernergi-i-godt-selskab' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/underside-mere-vin-mindre-whining.webp`, alt: 'politiken-puls — underside-mere-vin-mindre-whining' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/politikenvoice.webp`, alt: 'politiken-puls — politikenvoice' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/politikentagline.webp`, alt: 'politiken-puls — politikentagline' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/politikenpersonlighed.webp`, alt: 'politiken-puls — politikenpersonlighed' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/politikenintro.webp`, alt: 'politiken-puls — politikenintro' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/politikenlogo.webp`, alt: 'politiken-puls — politikenlogo' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/politikenidentitet.webp`, alt: 'politiken-puls — politikenidentitet' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/politikeneks2.webp`, alt: 'politiken-puls — politikeneks2' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/politikengrafik.webp`, alt: 'politiken-puls — politikengrafik' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/politikenbilledstil.webp`, alt: 'politiken-puls — politikenbilledstil' },
+      { src: `${import.meta.env.BASE_URL}projects/politiken-puls/politikeneks1.webp`, alt: 'politiken-puls — politikeneks1' }
+    ]
   },
   {
     slug: 'bullet-tounge',
@@ -111,10 +200,19 @@ export const projects = [
     category: '3D / Eksperimenter',
     year: '',
     description: 'Et udvalg af 3D-eksperimenter og visuelle studier skabt i Blender.',
-    image: wixAssets.blenderIslandWide,
+    image: `${import.meta.env.BASE_URL}projects/blender/blenderen3.webp`,
     imageAlt: '3D-illustration skabt i Blender',
     gallery: [
-      { src: wixAssets.blenderIsland, alt: '3D-studie skabt i Blender' }
+      { src: `${import.meta.env.BASE_URL}projects/blender/blenderen1.webp`, alt: 'blender — blenderen1' },
+      { src: `${import.meta.env.BASE_URL}projects/blender/blenderen2.webp`, alt: 'blender — blenderen2' },
+      { src: `${import.meta.env.BASE_URL}projects/blender/blenderprint1.webp`, alt: 'blender — blenderprint1' },
+      { src: `${import.meta.env.BASE_URL}projects/blender/blenderprint2.webp`, alt: 'blender — blenderprint2' },
+      { src: `${import.meta.env.BASE_URL}projects/blender/blenderproces6.webp`, alt: 'blender — blenderproces6' },
+      { src: `${import.meta.env.BASE_URL}projects/blender/blenderproces5.webp`, alt: 'blender — blenderproces5' },
+      { src: `${import.meta.env.BASE_URL}projects/blender/blenderproces4.webp`, alt: 'blender — blenderproces4' },
+      { src: `${import.meta.env.BASE_URL}projects/blender/blenderproces1.webp`, alt: 'blender — blenderproces1' },
+      { src: `${import.meta.env.BASE_URL}projects/blender/blenderproces2.webp`, alt: 'blender — blenderproces2' },
+      { src: `${import.meta.env.BASE_URL}projects/blender/blenderproces3.webp`, alt: 'blender — blenderproces3' }
     ]
   }
 ]
