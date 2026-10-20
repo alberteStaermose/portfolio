@@ -10,6 +10,8 @@ const sonjaImage = (name) => project.value?.gallery?.find(item => typeof item !=
 const sonjaVisuals = computed(() => ['sonjalogo2','sonjatagline','sonjagrafik','sonjainsta','sonjamenu'].map(sonjaImage).filter(Boolean))
 const sonjaBrandVisuals = computed(() => ['sonjaidentitet'].map(sonjaImage).filter(Boolean))
 const galleryItems = computed(() => ['sonja','bufferlo','rf-pantsystem','samyang','politiken-puls','while-in-battle','blender'].includes(project.value?.slug) ? [] : project.value?.gallery)
+const videoBlocks = computed(() => project.value?.videos || [])
+const videoFor = (placement) => videoBlocks.value.filter(video => video.placement === placement)
 const asset = (slug,name) => `${import.meta.env.BASE_URL}projects/${slug}/${name}.webp`
 const coverSrc = computed(() => {
  const covers = {'rf-pantsystem':'rfplads','bufferlo':'bufferlo','samyang':'samyangt-shirts','while-in-battle':'whileinbatlleplakat','sonja':'sonjalogo','politiken-puls':'hero-page','blender':'blenderen3'}
@@ -103,6 +105,7 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
         </template>
       </section>
     </div>
+    <section v-for="(video,index) in videoFor('after-intro')" :key="'intro-video-'+index" class="case-video-block" :class="'case-video-block--'+(video.format || 'landscape')"><h2 v-if="video.heading">{{ video.heading }}</h2><video :src="video.src" :poster="video.poster" :autoplay="video.autoplay === true" :muted="video.autoplay === true || video.muted === true" :loop="video.loop === true" controls playsinline preload="metadata"></video></section>
     <div v-if="project.body" class="case-body"><p>{{ project.body }}</p></div>
     <div v-if="project.slug === 'sonja'" class="sonja-visual-story">
       <figure v-for="(item, index) in sonjaVisuals" :key="index"><img :src="item.src" :alt="item.alt" loading="lazy" /></figure>
@@ -127,6 +130,7 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
         <div v-if="block.heading" class="case-visual-copy"><h2>{{ block.heading }}</h2><template v-for="(paragraph,i) in block.paragraphs" :key="i"><div v-if="typeof paragraph === 'object'" class="case-subsection"><h3>{{ paragraph.subheading }}</h3><p>{{ paragraph.text }}</p></div><p v-else>{{ paragraph }}</p></template></div>
       </section>
     </div>
+    <section v-for="(video,index) in videoFor('after-visuals')" :key="'visual-video-'+index" class="case-video-block" :class="'case-video-block--'+(video.format || 'portrait')"><h2 v-if="video.heading">{{ video.heading }}</h2><video :src="video.src" :poster="video.poster" :autoplay="video.autoplay === true" :muted="video.autoplay === true || video.muted === true" :loop="video.loop === true" controls playsinline preload="metadata"></video></section>
     <div v-if="galleryItems?.length" class="case-gallery" :class="{ 'case-gallery--bufferlo': project.slug === 'bufferlo' }">
       <figure v-for="(item, index) in galleryItems" :key="index">
         <img :src="typeof item === 'string' ? item : item.src" :alt="typeof item === 'string' ? project.title : (item.alt || project.title)" loading="lazy" />
