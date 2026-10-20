@@ -11,6 +11,7 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
 <template>
   <article v-if="project" class="case-study">
     <div class="case-top"><RouterLink to="/#arbejde">← TILBAGE TIL ARKIVET</RouterLink><span>{{ project.year || 'VISUELT ARKIV' }}</span></div>
+    <div v-if="project.image" class="case-cover"><img :src="project.image" :alt="project.imageAlt || project.title" /></div>
     <div class="case-introduction">
       <header class="case-header">
         <p class="eyebrow">{{ project.category }}</p>
@@ -35,7 +36,6 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
         </template>
       </section>
     </div>
-    <div v-if="project.image" class="case-cover"><img :src="project.image" :alt="project.imageAlt || project.title" /></div>
     <div v-if="project.body" class="case-body"><p>{{ project.body }}</p></div>
     <div v-if="project.gallery?.length" class="case-gallery">
       <figure v-for="(item, index) in project.gallery" :key="index">
