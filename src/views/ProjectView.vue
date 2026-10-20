@@ -51,10 +51,9 @@ const editorialVisuals = computed(() => {
   {layout:'dancers',images:['whiledancer1','whiledancer2']}
  ]
  if(project.value?.slug === 'blender') return [
-  {layout:'pair',images:['blenderen1','blenderen2']},
-  {layout:'pair',images:['blenderprint1','blenderprint2']},
-  {layout:'three',images:['blenderproces1','blenderproces2','blenderproces3']},
-  {layout:'three',images:['blenderproces4','blenderproces5','blenderproces6']}
+  {layout:'blender-hero-three',images:['blenderen1','blenderen2','blenderen3']},
+  {layout:'blender-process',images:['blenderproces1','blenderproces2','blenderproces3','blenderproces4']},
+  {layout:'blender-print',images:['blenderprint1','blenderprint2']}
  ]
  if(project.value?.slug === 'bufferlo') return [
   {layout:'wide',images:['start-2']},
