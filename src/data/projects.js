@@ -104,24 +104,7 @@ export const projects = [
     ],
     image: `${import.meta.env.BASE_URL}projects/valoer/valorassetgenerator.webp`,
     imageAlt: 'Valør — visuel identitet og logoanimation',
-    gallery: [
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valortpe.webp`, alt: 'valoer — valortpe' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valort-shirt2.webp`, alt: 'valoer — valort-shirt2' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valort-shirt.webp`, alt: 'valoer — valort-shirt' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valorposter-4.webp`, alt: 'valoer — valorposter-4' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valoroutdoor.webp`, alt: 'valoer — valoroutdoor' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valoroutdoor3.webp`, alt: 'valoer — valoroutdoor3' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valoroutdoor2.webp`, alt: 'valoer — valoroutdoor2' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valorlogoposneg.webp`, alt: 'valoer — valorlogoposneg' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valorgenereret2.webp`, alt: 'valoer — valorgenereret2' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valorgenereret1.webp`, alt: 'valoer — valorgenereret1' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valorcomputer.webp`, alt: 'valoer — valorcomputer' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valorboxes.webp`, alt: 'valoer — valorboxes' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valorbilleder1.webp`, alt: 'valoer — valorbilleder1' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valorbilleder2.webp`, alt: 'valoer — valorbilleder2' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valorasset1.webp`, alt: 'valoer — valorasset1' },
-      { src: `${import.meta.env.BASE_URL}projects/valoer/valorassetgenerator.webp`, alt: 'valoer — valorassetgenerator' }
-    ]
+    gallery: []
   },
   {
     slug: 'tuborg',
