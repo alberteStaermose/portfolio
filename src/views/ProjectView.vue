@@ -56,10 +56,11 @@ const editorialVisuals = computed(() => {
   {layout:'blender-print',images:['blenderprint1','blenderprint2']}
  ]
  if(project.value?.slug === 'bufferlo') return [
-  {layout:'wide',images:['start-2']},
   {layout:'three',images:['speciale-eksamen-2-4','speciale-eksamen-2','speciale-eksamen-2-2']},
   {layout:'three',images:['kopi-af-3-teleco-wireless-router-4','kopi-af-3-teleco-wireless-router','kopi-af-3-teleco-wireless-router-2']},
-  {layout:'wide',images:['farver']},{layout:'wide',images:['font']}
+  {layout:'wide',images:['start-2']},
+  {layout:'wide',images:['farver']},
+  {layout:'wide',images:['font']}
  ]
  if(project.value?.slug === 'rf-pantsystem') return [
   {layout:'wide',images:['rfsaveorswap']},{layout:'wide',images:['rfcup']},
