@@ -104,7 +104,43 @@ export const projects = [
     title: 'Sonja',
     category: 'Branding / Visuel identitet',
     year: '',
-    description: 'Et identitetsprojekt med strategi, positionering, logo, farver, billedstil, tone of voice og kommunikation på tværs af menukort og sociale medier.',
+    description: "Vi ønsker at opfriske Café Sonja brandet.",
+    projectType: 'Gruppeopgave',
+    role: 'Strateg og grafiker',
+    client: 'Café Sonja',
+    sections: [
+      { heading: "CLIENTBRIEF", paragraphs: [
+        "Vi ønsker at opfriske Café Sonja brandet. Café Sonja har eksisteret i over 30 år og har været mange forskellige ting igennem tiderne. Nu har vi fundet et cafékoncept, som er populært og nu skal vi fortælle endnu mere om det og styrke vores brand. Café Sonja har sit navn efter Tv-serien Sonja i Saxogade og det fylder nogle gange lidt for meget, så derfor vil vi gerne frigøre os fra den historie uden at glemme det helt – så vi ønsker ikke at skifte navn, men få sat nogle flere historie på hvad Café Sonja er.",
+        "Café Sonja skal være i top 3, når man tænker på klassiske cafeer i København. Vi er en af de første cafeer i KBH, så vi skal være mere kendte. Vi ønsker, at vi med et styrket brand, kan vise alt det Sonja er og tiltrække flere gæster og turister. Sonja er en del af det store sociale arbejde der bliver lavet i Saxogade og det må meget gerne skinne igennem i brandet, samtidigt med at vi stadig skal fremstå som en up-to-date café i kbh."
+      ] },
+      { heading: "RESEARCH OG PROCES", paragraphs: [
+        "Vi startede hele projektet ud med en dybdegående research som vi strukturerede ud fra det vi kalder Jhonsons 4C'er, Client, Consumer, Culture og Categori. Dette indbar en masse kvalitativ og kvantitav data-indsamling i form af deskresearch, interviews, spørgeskemaer og observationer.",
+        "Ud fra vores research lavede vi en ny brandstrategi til Café Sonja, som ligger til grund for den nye verbale og visuelle identitet vi har udviklet til Café Sonja. Udover dette valgte vi at ændre navnet fra \"Café Sonja\" til \"Sonja's\", for at udfordre client briefen."
+      ] },
+      { heading: "INSIGHT OG LØSNING", paragraphs: [
+        "Ud fra vores research kom vi frem til 4 insights:",
+        "En cafe som alle andre, men som har mere fokus på caféen som third place og fællesskabet end kvaliteten af kaffen - Mere folkehus end kommerciel café.",
+        "Fællesskabsorienterede københavnere.",
+        "Mere fokus på kommunikation af fællesskabet.",
+        "Mange lider af ensomhed som Café Sonja vil skabe et rum for, hvor man kan mødes og skabe nye relationer.",
+        "Disse insights har vi brugt til at udvikle en ny brandstrategi, en tone of voice og et manifest, og ud fra det udviklet en ny visuel identitet."
+      ] },
+      { heading: "TONE OF VOICE", paragraphs: [
+        "Café Sonja’s Tone of Voice er varm, uformel og indbydende. Den taler direkte til fællesskabet og understøtter følelsen af at være et åbent og inkluderende sted, hvor alle er velkomne. Sproget er jordnært og personligt, hvilket afspejler filosofien om, at det skal være et sted for alle. Der bruges hverdagsudtryk og en tone, der skaber en følelse af, at man taler med en god ven, fremfor et brand. Det gør, at Sonjas føles nært og tilgængeligt, og det fremhæver ønsket om at bygge bro mellem mennesker i lokalområdet."
+      ] },
+      { heading: "MANIFEST", paragraphs: [
+        "Sonja's har siden 1986 været et samlingspunkt, hvor fællesskab står i hjertet af alt, vi gør. Vores døre er altid åbne - hos os er man velkommen, som man er. Ansvaret for vores lokalsamfund og den verden vi lever, kræver en fælles indsats, og vi skaber et rum hvor vi alle har en lige værdi. Vi omfavner diversitet og ser den som en styrke, der gør vores fællesskab rigere. Vi vil være mødestedet på Vesterbro. Sammen bygger vi broer mellem mennesker og fremmer relationer, der varer ved."
+      ] },
+      { heading: "BRANDSTRATEGI", paragraphs: [
+        { subheading: "Hvad gør vi og hvordan gør vi det?", text: "Vi skaber et varmt mødested for alle, der kan rumme både events og alle salgs kaffetørstige individer. Vi mødes om en kop kaffe eller en bid mad. Mad, der tager højde for alle slags diæter." },
+        { subheading: "Hvad er vores vigtigste værdier?", text: "Fælleskab, ansvarlighed og inklusivitet." },
+        { subheading: "Hvem er vi her for?", text: "Progressive Københavnere, der søger et meningsfuldt fælleskab." },
+        { subheading: "Hvorfor er vi her?", text: "Fordi alle har behov for et fælles samlingspunkt." },
+        { subheading: "Vores ambition", text: "Vi har en ambition om at være mødestedet på Vesterbro, hvor man kan komme og blive en del af os og vores fællesskab." },
+        { subheading: "Hvad skiller os ud?", text: "Fællesskabet, det sociale, at hjælpe udsatte og være mødestedet for ensomme unge." },
+        { subheading: "Hvad er vores personlighed?", text: "Vi er fællesskabsorienterede, chill, tidløse, urbane og lokale." }
+      ] }
+    ],
     image: `${import.meta.env.BASE_URL}projects/sonja/sonjalogo.webp`,
     imageAlt: 'Sonja — visuel identitet',
     gallery: [
