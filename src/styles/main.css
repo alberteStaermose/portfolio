@@ -218,3 +218,114 @@
 .case-prototype-section{padding:clamp(3rem,5vw,6rem) clamp(1.5rem,2.6vw,3.5rem)}
 .case-return{margin-left:clamp(1.5rem,2.6vw,3.5rem)}
 @media(max-width:650px){.case-cover{height:85svh}.case-introduction{padding-top:4rem}}
+
+/* 09 — Unified, image-first project art direction.
+   Uses only the images and copy already present in projects.js. */
+.case-study{
+  --case-gutter:clamp(1.25rem,5.2vw,6rem);
+  background:#fff;
+  padding:0 0 clamp(5rem,9vw,9rem);
+  isolation:isolate;
+}
+.case-cover{
+  position:sticky;
+  top:0;
+  z-index:0;
+  height:min(80svh,780px);
+  min-height:360px;
+  margin:0;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:#f1f0ed;
+}
+.case-cover img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-height:none;
+  object-fit:contain;
+  object-position:center;
+  background:transparent;
+}
+.case-top{z-index:4}
+.case-introduction,.case-sections,.case-body,.case-gallery,.case-prototype-section,.case-return{position:relative;z-index:1}
+.case-introduction{
+  margin:0;
+  padding:clamp(5rem,9vw,9rem) var(--case-gutter) clamp(3.5rem,6vw,6rem);
+  background:#fff;
+  border-radius:20px 20px 0 0;
+  grid-template-columns:minmax(0,2fr) minmax(11rem,.65fr);
+  gap:clamp(2rem,7vw,8rem);
+}
+.case-introduction .case-header h1{
+  font-size:clamp(3.6rem,7.8vw,9rem);
+  line-height:1.03;
+  letter-spacing:-.055em;
+  overflow-wrap:anywhere;
+}
+.case-introduction .case-meta{gap:1.35rem}
+.case-introduction .case-meta strong{font-size:clamp(.95rem,1.15vw,1.2rem)}
+.case-introduction .case-meta p{font-size:clamp(.85rem,.95vw,1rem)}
+.case-sections{
+  background:#fff;
+  padding:0 var(--case-gutter) clamp(4rem,8vw,9rem);
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(1.5rem,4vw,5rem);
+}
+.case-text-section h2{font-size:clamp(1.05rem,1.45vw,1.5rem);line-height:1.35}
+.case-text-section p{font-size:clamp(.94rem,1.05vw,1.08rem);line-height:1.65}
+.case-body{background:#fff;padding:0 var(--case-gutter);margin:0;max-width:none}
+.case-body p{max-width:52rem;margin:0 auto}
+.case-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:start;
+  column-gap:clamp(1rem,3vw,3rem);
+  row-gap:clamp(3rem,7vw,8rem);
+  margin:0;
+  padding:clamp(2rem,5vw,5rem) var(--case-gutter) clamp(4rem,7vw,8rem);
+  background:#fff;
+}
+.case-gallery figure{min-width:0;margin:0;display:flex;flex-direction:column;align-items:center}
+.case-gallery figure:nth-child(3n){grid-column:auto}
+.case-gallery figure:nth-child(5n + 1){grid-column:1 / -1}
+.case-gallery img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:min(68svh,680px);
+  object-fit:contain;
+  object-position:center;
+}
+.case-gallery figure:nth-child(5n + 1) img{max-height:min(76svh,760px)}
+.case-gallery figcaption{align-self:start;line-height:1.5}
+.case-prototype-section{padding:clamp(3rem,6vw,6rem) var(--case-gutter);max-width:none}
+.case-prototype-section p{max-width:52rem}
+.case-prototype-section a{display:inline-block;border-bottom:1px solid;margin-top:1rem;padding-bottom:.4rem}
+.case-return{margin-left:var(--case-gutter)}
+/* Archive thumbnails use the same full artwork as the project hero. */
+.real-projects{margin-top:clamp(4rem,8vw,8rem);gap:clamp(2.5rem,5vw,5rem) clamp(1rem,3vw,3rem)}
+.real-projects .project-card img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/10;
+  object-fit:contain;
+  background:#eeede9;
+}
+.real-projects .project-meta{padding-top:.85rem}
+@media(max-width:950px){
+  .case-introduction{grid-template-columns:minmax(0,1.5fr) minmax(10rem,.7fr)}
+  .case-sections{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+}
+@media(max-width:700px){
+  .case-cover{height:64svh;min-height:300px}
+  .case-introduction{grid-template-columns:1fr;gap:2.5rem;padding-top:4rem}
+  .case-introduction .case-header h1{font-size:clamp(3.25rem,12vw,6rem)}
+  .case-sections{grid-template-columns:1fr;gap:1.5rem}
+  .case-gallery{grid-template-columns:1fr;row-gap:3rem}
+  .case-gallery figure:nth-child(5n + 1){grid-column:auto}
+  .case-gallery img,.case-gallery figure:nth-child(5n + 1) img{max-height:60svh}
+  .real-projects{grid-template-columns:1fr}
+}
