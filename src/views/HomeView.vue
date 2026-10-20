@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { wixAssets } from '../data/wixAssets.js'
 import { projects } from '../data/projects.js'
 
+const coverFor = (project) => project.slug === 'rf-pantsystem' ? `${import.meta.env.BASE_URL}projects/rf-pantsystem/rfplads.webp` : project.slug === 'while-in-battle' ? `${import.meta.env.BASE_URL}projects/while-in-battle/whileinbatlleplakat.webp` : project.image
 const hero = ref(null)
 const reveal = ref(null)
 const title = ref(null)
@@ -53,7 +54,7 @@ onUnmounted(() => { context?.revert() })
     </div>
     <div v-if="projects.length" class="project-grid real-projects">
       <RouterLink v-for="project in projects.filter(p => !['tuborg', 'bullet-tounge'].includes(p.slug))" :key="project.slug" :to="`/projekter/${project.slug}`" class="project-card">
-        <img v-if="project.image" :src="project.image" :alt="project.imageAlt || ''" loading="lazy" />
+        <img v-if="project.image" :src="coverFor(project)" :alt="project.imageAlt || ''" loading="lazy" />
         <div class="project-meta"><h3>{{ project.title }}</h3><span>{{ project.year }}</span></div>
       </RouterLink>
     </div>
