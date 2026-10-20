@@ -4,7 +4,12 @@ import { useRoute } from 'vue-router'
 import { projects } from '../data/projects.js'
 const route = useRoute()
 const project = computed(() => projects.find(item => item.slug === route.params.slug))
-const introductorySections = computed(() => project.value?.slug === "while-in-battle" ? project.value.sections?.slice(0, 3) : project.value?.sections)
+const introductorySections = computed(() => ['while-in-battle', 'sonja'].includes(project.value?.slug) ? project.value.sections?.slice(0, 3) : project.value?.sections)
+const sonjaSections = computed(() => project.value?.slug === 'sonja' ? project.value.sections?.slice(3) : [])
+const sonjaImage = (name) => project.value?.gallery?.find(item => typeof item !== 'string' && item.src.endsWith('/' + name + '.webp'))
+const sonjaVisuals = computed(() => ['sonjalogo2','sonjatagline','sonjagrafik','sonjainsta','sonjamenu'].map(sonjaImage).filter(Boolean))
+const sonjaBrandVisuals = computed(() => ['sonjaidentitet','sonjafarver','sonjastrategi','sonjastrategi1','sonjastrategi2','sonjastrategi3','sonjabilledstil','sonjacitat','sonjalogoinspo','sonjalogo-2','sonjainsta-2','sonjainsights','sonjamanifest','sonjapositionering','sonjasomeplan','sonjatoneofvoice'].map(sonjaImage).filter(Boolean))
+const galleryItems = computed(() => project.value?.slug === 'sonja' ? project.value.gallery?.filter(item => ![...sonjaVisuals.value,...sonjaBrandVisuals.value].includes(item)) : project.value?.gallery)
 const prototypeSection = computed(() => project.value?.slug === "while-in-battle" ? project.value.sections?.find(section => section.heading === "KODET PROTOTYPE PÅ KAMPGNESITE") : null)
 </script>
 
@@ -38,8 +43,25 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
       </section>
     </div>
     <div v-if="project.body" class="case-body"><p>{{ project.body }}</p></div>
-    <div v-if="project.gallery?.length" class="case-gallery" :class="{ 'case-gallery--bufferlo': project.slug === 'bufferlo' }">
-      <figure v-for="(item, index) in project.gallery" :key="index">
+    <div v-if="project.slug === 'sonja'" class="sonja-visual-story">
+      <figure v-for="(item, index) in sonjaVisuals" :key="index"><img :src="item.src" :alt="item.alt" loading="lazy" /></figure>
+    </div>
+    <div v-if="sonjaSections.length" class="sonja-editorial-sections">
+      <section v-for="(section, index) in sonjaSections" :key="index" class="case-text-section" :class="{ 'sonja-strategy': section.heading === 'BRANDSTRATEGI' }">
+        <h2>{{ section.heading }}</h2>
+        <div class="sonja-section-content">
+          <template v-for="(paragraph, paragraphIndex) in section.paragraphs" :key="paragraphIndex">
+            <div v-if="typeof paragraph === 'object'" class="case-subsection"><h3>{{ paragraph.subheading }}</h3><p>{{ paragraph.text }}</p></div>
+            <p v-else>{{ paragraph }}</p>
+          </template>
+        </div>
+      </section>
+    </div>
+    <div v-if="project.slug === 'sonja'" class="sonja-visual-story sonja-visual-story--brand">
+      <figure v-for="(item, index) in sonjaBrandVisuals" :key="index"><img :src="item.src" :alt="item.alt" loading="lazy" /></figure>
+    </div>
+    <div v-if="galleryItems?.length" class="case-gallery" :class="{ 'case-gallery--bufferlo': project.slug === 'bufferlo' }">
+      <figure v-for="(item, index) in galleryItems" :key="index">
         <img :src="typeof item === 'string' ? item : item.src" :alt="typeof item === 'string' ? project.title : (item.alt || project.title)" loading="lazy" />
         <figcaption v-if="item.caption">{{ item.caption }}</figcaption>
       </figure>
