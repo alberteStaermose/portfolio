@@ -41,7 +41,24 @@ export const projects = [
     title: 'While in Battle',
     category: 'Kampagne / Digitalt design',
     year: '',
-    description: 'Et visuelt kampagneprojekt med plakat, billedstil, digitalt kampagnesite og bevægelse.',
+    description: "Dette eksamensprojekt gik ud på at vi skulle lave en visuel identitet, et kampagnesite, en plakat og en fysisk installation til danseferestillingen \"While In Battle I'm Free, Never Free To Rest\".",
+    projectType: 'Gruppe eksamensopgave',
+    role: 'Projektleder, grafisk og coded designer',
+    client: 'Metropolis',
+    sections: [
+      { heading: "CLIENTBRIEF", paragraphs: [
+        "Dette eksamensprojekt gik ud på at vi skulle lave en visuel identitet, et kampagnesite, en plakat og en fysisk installation til danseferestillingen \"While In Battle I'm Free, Never Free To Rest\" som blev opført af Metropolis og dansekompagniet Culberg på Blågårdsplads og var koreograferet af Hooman Sharifi."
+      ] },
+      { heading: "RESEARCH OG PROCES", paragraphs: [
+        "Vi startede dette projekt ud med at lægge en struktureret plan for vores process, hvor vi her benyttede os af Trello til dette. Det var vigtgit for os at lave en dybdegående research på forestillingen og Hooman, og de valg han tog omkring forestillingen, for virkelig forstå budskabet bag danseforestillingen. Baseret på denne dybdegående research og analyse af Metropolis’ vision, stykkets tematik, aktører mm. designede vi en visuel identitet til forestillingen. Med afsæt i den visuelle identitet designede vi en plakat samt et kampagnesite der annoncerer og kommunikerer forestillingen. Til sidst designede og kodede vi i processing en fysisk installation til selve forestillingen i som tilskuerne kan interagere med, der udfolder den visuelle identitet, en del af forestillingen vi gerne ville belyse og vækker nysgerrighed."
+      ] },
+      { heading: "INSIGHT OG LØSNING", paragraphs: [
+        "Vores visuelle identitet er skabt ud fra værdiord – abstraktion, bevægelse og kontrast. Centralt i vores visuelle identitet er en grafisk konstruktion af abstrakte former, som danner et samlet billede. Det var vigtigt for os at inddrage abstraktion, for at appellere til en af egenskaberne contemporary art har, nemlig at invitere beskueren til en personlig refleksion, og ikke give et endegyldigt svar på hvordan det skal tolkes. Vores andet værdiord er bevægelse. Kroppen som dynamisk form er centralt, selvsagt fordi det er en danseforestilling, men også for at fremhæve tematikken, at danserne mødes og taler et fælles sprog igennem dansen. Formerne skal skabe associationer til dansende kropsdele, men samtidig åbne op for egen tolkning. Det sidste værdiord er kontrast. Kontrasten mellem fællesskabet og individet, krig og fred og en legende dansefest og et dramatisk opgør mellem mennesker. Vi har brugt kontrasten til at skabe dramatik i mødet mellem bløde dynamiske former, en grotesk font og i farverne. Til at løse opgaven benyttede vi os af P5, HTML, CSS, JavaScript, Adobe Illustrator og Midjourney."
+      ] },
+      { heading: "KODET PROTOTYPE PÅ KAMPGNESITE", paragraphs: [
+        "Sitet er sat op med togglebutton, der får sitet til at skifte mellem kontrasten, light- og darkmode, og muligheden for at gå tilbage til default som er der hvor kontrasterne mødes og skal symbolisere forestillingen hvor kontrasterne mødes. Da det er en prototype er der kun én version i light og én version, men tanken var at der skulle være et array med flere versioner af light- og darkmode."
+      ] }
+    ],
     image: `${import.meta.env.BASE_URL}projects/while-in-battle/whileplakat.webp`,
     imageAlt: 'While in Battle — kampagne og digitalt design',
     gallery: [
