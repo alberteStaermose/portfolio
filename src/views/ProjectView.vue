@@ -15,6 +15,17 @@ const project = computed(() => projects.find(item => item.slug === route.params.
       <p v-if="project.description" class="case-intro">{{ project.description }}</p>
     </header>
     <div v-if="project.image" class="case-cover"><img :src="project.image" :alt="project.imageAlt || project.title" /></div>
+    <div v-if="project.projectType || project.role || project.client" class="case-meta">
+      <div v-if="project.projectType"><strong>Projektets type</strong><p>{{ project.projectType }}</p></div>
+      <div v-if="project.role"><strong>Min rolle</strong><p>{{ project.role }}</p></div>
+      <div v-if="project.client"><strong>Kunden</strong><p>{{ project.client }}</p></div>
+    </div>
+    <div v-if="project.sections?.length" class="case-sections">
+      <section v-for="(section, index) in project.sections" :key="index" class="case-text-section">
+        <h2>{{ section.heading }}</h2>
+        <p v-for="(paragraph, paragraphIndex) in section.paragraphs" :key="paragraphIndex">{{ paragraph }}</p>
+      </section>
+    </div>
     <div v-if="project.body" class="case-body"><p>{{ project.body }}</p></div>
     <div v-if="project.gallery?.length" class="case-gallery">
       <figure v-for="(item, index) in project.gallery" :key="index">
