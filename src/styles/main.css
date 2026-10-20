@@ -390,3 +390,19 @@
 .sonja-strategy .case-subsection h3{font-weight:400}
 .sonja-visual-story--brand{padding-top:0}
 @media(max-width:700px){.sonja-editorial-sections{grid-template-columns:1fr}.sonja-editorial-sections .sonja-strategy{grid-column:1}.sonja-strategy .sonja-section-content{grid-template-columns:1fr}.sonja-visual-story{gap:3rem}}
+
+/* 10 — Project-specific Wix screenshot compositions */
+.case-editorial-gallery{background:#fff;display:flex;flex-direction:column;gap:clamp(4rem,7vw,8rem);padding:clamp(2rem,4vw,4rem) var(--case-gutter) clamp(4rem,7vw,8rem)}
+.case-visual-block{width:100%;max-width:1220px;margin:0 auto}
+.case-visual-images{display:grid;gap:clamp(.75rem,2vw,2.5rem);align-items:start}
+.case-visual-block--wide .case-visual-images{width:min(100%,920px);margin:auto;grid-template-columns:1fr}
+.case-visual-block--pair .case-visual-images,.case-visual-block--pair-text .case-visual-images{grid-template-columns:repeat(2,minmax(0,1fr))}
+.case-visual-block--three .case-visual-images{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.4rem,1vw,1rem)}
+.case-visual-images figure{margin:0;min-width:0}
+.case-visual-images img{display:block;width:100%;height:auto;object-fit:contain}
+.case-visual-block--pair-text{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,6rem);align-items:start}
+.case-visual-block--pair-text .case-visual-images{gap:1rem}
+.case-visual-copy h2{font-size:clamp(1.2rem,1.7vw,1.7rem);font-weight:400;color:#686868;margin:0 0 1rem}
+.case-visual-copy p{font-size:clamp(.95rem,1.05vw,1.1rem);line-height:1.6;color:#757575;margin:0 0 1.2rem}
+.case-study:has(.case-editorial-gallery) .case-cover img{object-fit:cover}
+@media(max-width:700px){.case-editorial-gallery{gap:3.5rem}.case-visual-block--pair-text{grid-template-columns:1fr}.case-visual-block--three .case-visual-images{gap:.5rem}.case-visual-block--pair .case-visual-images{gap:.75rem}}
