@@ -29,17 +29,16 @@ const editorialVisuals = computed(() => {
   {layout:'strategy',heading:'BRANDSTRATEGI',paragraphs:project.value.sections?.find(s=>s.heading==='BRANDSTRATEGI')?.paragraphs || []}
  ]
  if(project.value?.slug === 'politiken-puls') return [
-  {layout:'wide',images:['politikenintro']},
-  {layout:'wide',images:['politikenlogo']},
-  {layout:'pair',images:['politikeneks1','politikeneks2']},
-  {layout:'wide',images:['politikenidentitet']},
-  {layout:'pair',images:['politikengrafik','politikenbilledstil']},
-  {layout:'three',images:['underside-wellness','underside-dinside','underside-fa-gang-i-trbenet']},
-  {layout:'pair',images:['underside-ny-ernergi-i-godt-selskab','underside-mere-vin-mindre-whining']},
-  {layout:'wide',images:['politikentagline']},
-  {layout:'wide',images:['politikenvoice']},
-  {layout:'wide',images:['politikenpersonlighed']},
-  {layout:'strategy',heading:'BRANDSTRATEGI',paragraphs:project.value.sections?.find(s=>s.heading==='BRANDSTRATEGI')?.paragraphs || []}
+  {layout:'politiken-logo',images:['politikenlogo']},
+  {layout:'politiken-illustrations',images:['politikengrafik']},
+  {layout:'politiken-moodboard',images:['politikenbilledstil']},
+  {layout:'politiken-outdoor',images:['politikeneks1']},
+  {layout:'politiken-print',images:['politikeneks2']},
+  {layout:'politiken-site',images:['hero-page']},
+  {layout:'politiken-mobile',images:['underside-wellness','underside-dinside','underside-fa-gang-i-trbenet','underside-ny-ernergi-i-godt-selskab']},
+  {layout:'politiken-copy',heading:'TONE OF VOICE OG MANIFEST',images:[]},
+  {layout:'strategy',heading:'BRANDSTRATEGI',paragraphs:project.value.sections?.find(s=>s.heading==='BRANDSTRATEGI')?.paragraphs || []},
+  {layout:'politiken-identity',images:['politikenidentitet']}
  ]
  if(project.value?.slug === 'while-in-battle') return [
   {layout:'prototype-views',images:['whilelightmode','whiledefaultmode','whiledarkmode']},
