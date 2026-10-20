@@ -372,3 +372,7 @@
 .real-projects .project-card{display:block;min-width:0}
 .real-projects .project-card img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:center;background:#eeede9}
 .real-projects .project-meta{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+
+/* Critical fix: prevent sticky hero from resurfacing at the end of long case studies. Keep the hero in normal document flow until a bounded pinning implementation is available. */
+.case-study > .case-cover{position:relative;top:auto;z-index:0}
+.case-study > .case-content-surface{position:relative;z-index:1;margin-top:0;background:#fff}
