@@ -419,3 +419,11 @@
 .case-study .case-cover img{width:100%;height:100%;object-fit:cover}
 .case-study:has(.case-editorial-gallery) .case-visual-block--wide img{max-height:none}
 @media(max-width:700px){.case-visual-block--strategy .case-visual-copy{grid-template-columns:1fr}.case-study .case-cover{height:60svh}}
+
+/* Video compositions: retain original aspect ratios and generous Wix spacing */
+.case-video-block{position:relative;z-index:2;background:#fff;padding:clamp(3rem,7vw,8rem) var(--case-gutter);margin:0 auto;text-align:center}
+.case-video-block h2{font-weight:400;color:#666;font-size:clamp(1.1rem,1.7vw,1.7rem);margin:0 auto 2rem;max-width:1100px;text-align:left}
+.case-video-block video{display:block;width:100%;max-width:1100px;height:auto;margin:0 auto;background:#111;object-fit:contain}
+.case-video-block--portrait video{max-width:min(420px,100%);aspect-ratio:9/16}
+.case-video-block--square video{max-width:680px;aspect-ratio:1}
+.case-video-block--landscape video{aspect-ratio:16/9}
