@@ -204,3 +204,17 @@
   .case-text-section{margin-bottom:3rem}
   .case-text-section p{line-height:1.65}
 }
+
+/* 08 — Wix-style pinned hero: the white project content scrolls over the cover */
+.case-study{padding:0 0 8rem;position:relative;isolation:isolate;background:#fff}
+.case-top{position:absolute;top:1.5rem;left:clamp(1.5rem,2.6vw,3.5rem);right:clamp(1.5rem,2.6vw,3.5rem);z-index:3;color:#fff;text-shadow:0 1px 8px #0008}
+.case-cover{position:sticky;top:0;height:100svh;width:100%;margin:0;overflow:hidden;z-index:0;background:#e8e7e1}
+.case-cover img{width:100%;height:100%;max-height:none;object-fit:cover;background:transparent}
+.case-introduction,.case-sections,.case-body,.case-gallery,.case-prototype-section,.case-return{position:relative;z-index:1}
+.case-introduction{background:#fff;margin:0;padding:clamp(4rem,7vw,8rem) clamp(1.5rem,2.6vw,3.5rem) clamp(4rem,7vw,7rem)}
+.case-sections{background:#fff;padding:0 clamp(1.5rem,2.6vw,3.5rem) clamp(3rem,5vw,6rem)}
+.case-body,.case-gallery,.case-prototype-section{background:#fff}
+.case-gallery{margin-top:0;padding:clamp(3rem,5vw,6rem) clamp(1.5rem,2.6vw,3.5rem)}
+.case-prototype-section{padding:clamp(3rem,5vw,6rem) clamp(1.5rem,2.6vw,3.5rem)}
+.case-return{margin-left:clamp(1.5rem,2.6vw,3.5rem)}
+@media(max-width:650px){.case-cover{height:85svh}.case-introduction{padding-top:4rem}}
