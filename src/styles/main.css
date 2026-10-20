@@ -406,3 +406,16 @@
 .case-visual-copy p{font-size:clamp(.95rem,1.05vw,1.1rem);line-height:1.6;color:#757575;margin:0 0 1.2rem}
 .case-study:has(.case-editorial-gallery) .case-cover img{object-fit:cover}
 @media(max-width:700px){.case-editorial-gallery{gap:3.5rem}.case-visual-block--pair-text{grid-template-columns:1fr}.case-visual-block--three .case-visual-images{gap:.5rem}.case-visual-block--pair .case-visual-images{gap:.75rem}}
+
+/* 11 — Interleaved editorial sections and cover framing */
+.case-visual-block--copy{max-width:760px;margin:clamp(2rem,5vw,5rem) auto}
+.case-visual-block--strategy{max-width:1220px;margin:clamp(3rem,7vw,8rem) auto}
+.case-visual-block--strategy .case-visual-copy{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(1.5rem,4vw,5rem);row-gap:1rem}
+.case-visual-block--strategy .case-visual-copy>h2{grid-column:1/-1;margin-bottom:1rem}
+.case-visual-block--strategy .case-subsection{margin:0 0 2rem}
+.case-visual-block--strategy .case-subsection h3{font-size:1.05rem;color:#666;font-weight:400}
+.case-visual-block--strategy .case-subsection p{white-space:pre-line}
+.case-study .case-cover{height:min(83svh,900px);background:#fff}
+.case-study .case-cover img{width:100%;height:100%;object-fit:cover}
+.case-study:has(.case-editorial-gallery) .case-visual-block--wide img{max-height:none}
+@media(max-width:700px){.case-visual-block--strategy .case-visual-copy{grid-template-columns:1fr}.case-study .case-cover{height:60svh}}
