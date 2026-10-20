@@ -175,3 +175,32 @@
   .case-text-section h2{margin-bottom:1.1rem}
   .case-text-section p{line-height:1.7}
 }
+
+
+/* 07 — Wix-inspired editorial project composition */
+.case-study{background:#fafafa;color:#303030;padding:clamp(1.5rem,3vw,3rem) clamp(1.5rem,2.6vw,3.5rem) 8rem}
+.case-introduction{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(13rem,.8fr);gap:clamp(2rem,5vw,6rem);align-items:start;margin:clamp(3rem,5vw,5rem) 0 clamp(4rem,7vw,7rem)}
+.case-introduction .case-header{padding:0;min-width:0}
+.case-introduction .case-header h1{font-size:clamp(4rem,8.3vw,10rem);font-weight:400;line-height:.98;letter-spacing:-.055em;margin:.65rem 0 0;overflow-wrap:normal}
+.case-introduction .case-meta{display:flex;flex-direction:column;gap:1.45rem;border:0;padding:0;margin:0;max-width:none}
+.case-introduction .case-meta strong{font-size:clamp(1.05rem,1.45vw,1.6rem);font-weight:400;letter-spacing:-.025em;text-transform:none;color:#686868;line-height:1.2}
+.case-introduction .case-meta p{font-size:clamp(.9rem,1.1vw,1.1rem);color:#777;line-height:1.45;margin:.2rem 0 0}
+.case-sections{width:100%;max-width:none;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(2rem,3.5vw,4.5rem);align-items:start}
+.case-text-section{min-width:0;margin:0 0 clamp(2.5rem,4vw,4rem)}
+.case-text-section h2{font-size:clamp(1.25rem,1.9vw,2rem);font-weight:400;letter-spacing:-.035em;line-height:1.25;color:#656565;margin:0 0 1.2rem}
+.case-text-section p{font-size:clamp(.96rem,1.08vw,1.15rem);font-weight:400;line-height:1.46;color:#757575;letter-spacing:-.01em;max-width:none;margin:0 0 1.2rem}
+.case-subsection h3{font-weight:500;color:#555}
+.case-cover{margin-top:clamp(2.5rem,5vw,5rem)}
+@media(max-width:950px){
+  .case-introduction{grid-template-columns:minmax(0,1.6fr) minmax(11rem,.8fr)}
+  .case-sections{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .case-introduction .case-header h1{font-size:clamp(3.5rem,9vw,7rem)}
+}
+@media(max-width:650px){
+  .case-introduction{grid-template-columns:1fr;gap:2.5rem;margin:3rem 0 4rem}
+  .case-introduction .case-header h1{font-size:clamp(3.3rem,13vw,6rem)}
+  .case-introduction .case-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+  .case-sections{grid-template-columns:1fr;gap:0}
+  .case-text-section{margin-bottom:3rem}
+  .case-text-section p{line-height:1.65}
+}
