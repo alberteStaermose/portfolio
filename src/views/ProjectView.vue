@@ -9,11 +9,52 @@ const sonjaSections = computed(() => project.value?.slug === 'sonja' ? project.v
 const sonjaImage = (name) => project.value?.gallery?.find(item => typeof item !== 'string' && item.src.endsWith('/' + name + '.webp'))
 const sonjaVisuals = computed(() => ['sonjalogo2','sonjatagline','sonjagrafik','sonjainsta','sonjamenu'].map(sonjaImage).filter(Boolean))
 const sonjaBrandVisuals = computed(() => ['sonjaidentitet'].map(sonjaImage).filter(Boolean))
-const galleryItems = computed(() => ['sonja','bufferlo','rf-pantsystem'].includes(project.value?.slug) ? [] : project.value?.gallery)
+const galleryItems = computed(() => ['sonja','bufferlo','rf-pantsystem','samyang','politiken-puls','while-in-battle','blender'].includes(project.value?.slug) ? [] : project.value?.gallery)
 const asset = (slug,name) => `${import.meta.env.BASE_URL}projects/${slug}/${name}.webp`
-const coverSrc = computed(() => project.value?.slug === 'rf-pantsystem' ? asset('rf-pantsystem','rfplads') : project.value?.image)
-const openingSections = computed(() => project.value?.slug === 'rf-pantsystem' ? project.value.sections?.slice(0,3) : introductorySections.value)
+const coverSrc = computed(() => {
+ const covers = {'rf-pantsystem':'rfplads','bufferlo':'bufferlo','samyang':'samyangt-shirts','while-in-battle':'whileinbatlleplakat','sonja':'sonjalogo','politiken-puls':'hero-page','blender':'blenderen3'}
+ return covers[project.value?.slug] ? asset(project.value.slug,covers[project.value.slug]) : project.value?.image
+})
+const openingSections = computed(() => ['rf-pantsystem','samyang','politiken-puls','while-in-battle','blender'].includes(project.value?.slug) ? project.value.sections?.slice(0,project.value.slug === 'blender' ? 2 : 3) : introductorySections.value)
 const editorialVisuals = computed(() => {
+ if(project.value?.slug === 'samyang') return [
+  {layout:'wide',images:['samyanglogo']},
+  {layout:'wide',images:['samyanglogos']},
+  {layout:'wide',images:['samyanggrafik']},
+  {layout:'wide',images:['samyangnuddel']},
+  {layout:'wide',images:['samyangfrefter']},
+  {layout:'copy',heading:'NUDDELINDPAKNING',paragraphs:project.value.sections?.find(s=>s.heading==='NUDDELINDPAKNING')?.paragraphs || []},
+  {layout:'strategy',heading:'BRANDSTRATEGI',paragraphs:project.value.sections?.find(s=>s.heading==='BRANDSTRATEGI')?.paragraphs || []}
+ ]
+ if(project.value?.slug === 'politiken-puls') return [
+  {layout:'wide',images:['politikenintro']},
+  {layout:'wide',images:['politikenlogo']},
+  {layout:'pair',images:['politikeneks1','politikeneks2']},
+  {layout:'wide',images:['politikenidentitet']},
+  {layout:'pair',images:['politikengrafik','politikenbilledstil']},
+  {layout:'three',images:['underside-wellness','underside-dinside','underside-fa-gang-i-trbenet']},
+  {layout:'pair',images:['underside-ny-ernergi-i-godt-selskab','underside-mere-vin-mindre-whining']},
+  {layout:'wide',images:['politikentagline']},
+  {layout:'wide',images:['politikenvoice']},
+  {layout:'wide',images:['politikenpersonlighed']},
+  {layout:'strategy',heading:'BRANDSTRATEGI',paragraphs:project.value.sections?.find(s=>s.heading==='BRANDSTRATEGI')?.paragraphs || []}
+ ]
+ if(project.value?.slug === 'while-in-battle') return [
+  {layout:'pair',images:['whileplakat','whileplakatsort']},
+  {layout:'wide',images:['whilestyletyle']},
+  {layout:'pair',images:['whiledancer1','whiledancer2']},
+  {layout:'wide',images:['whilebilledstil']},
+  {layout:'three',images:['whilelightred','whilelightorange','whilelightgreen']},
+  {layout:'three',images:['whilelightblue','whilelightmode','whiledarkmode']},
+  {layout:'pair',images:['whiledefaultmode','whileintro']},
+  {layout:'wide',images:['whilefysiskinstallation']}
+ ]
+ if(project.value?.slug === 'blender') return [
+  {layout:'pair',images:['blenderen1','blenderen2']},
+  {layout:'pair',images:['blenderprint1','blenderprint2']},
+  {layout:'three',images:['blenderproces1','blenderproces2','blenderproces3']},
+  {layout:'three',images:['blenderproces4','blenderproces5','blenderproces6']}
+ ]
  if(project.value?.slug === 'bufferlo') return [
   {layout:'wide',images:['start-2']},
   {layout:'three',images:['speciale-eksamen-2-4','speciale-eksamen-2','speciale-eksamen-2-2']},
@@ -83,7 +124,7 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
     <div v-if="editorialVisuals.length" class="case-editorial-gallery">
       <section v-for="(block, blockIndex) in editorialVisuals" :key="blockIndex" class="case-visual-block" :class="'case-visual-block--' + block.layout">
         <div class="case-visual-images"><figure v-for="name in block.images" :key="name"><img :src="asset(project.slug,name)" :alt="project.title + ' — ' + name" loading="lazy" /></figure></div>
-        <div v-if="block.heading" class="case-visual-copy"><h2>{{ block.heading }}</h2><p v-for="(paragraph,i) in block.paragraphs" :key="i">{{ paragraph }}</p></div>
+        <div v-if="block.heading" class="case-visual-copy"><h2>{{ block.heading }}</h2><template v-for="(paragraph,i) in block.paragraphs" :key="i"><div v-if="typeof paragraph === 'object'" class="case-subsection"><h3>{{ paragraph.subheading }}</h3><p>{{ paragraph.text }}</p></div><p v-else>{{ paragraph }}</p></template></div>
       </section>
     </div>
     <div v-if="galleryItems?.length" class="case-gallery" :class="{ 'case-gallery--bufferlo': project.slug === 'bufferlo' }">
