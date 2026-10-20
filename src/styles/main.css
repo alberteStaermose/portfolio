@@ -479,3 +479,18 @@
 .case-editorial-gallery--blender .case-visual-block--blender-print .case-visual-images{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2.5vw,2.5rem)}
 .case-editorial-gallery--blender .case-visual-images img{width:100%;height:auto;max-height:none;object-fit:contain}
 @media(max-width:700px){.case-study:has(.case-editorial-gallery--blender) .case-sections{grid-template-columns:1fr}.case-editorial-gallery--blender .case-visual-block--blender-print{width:100%}}
+
+/* Politiken Puls — full-page reference: centered sequential identity plates */
+.case-editorial-gallery--politiken-puls{gap:clamp(3rem,5vw,6rem);padding-top:0}
+.case-editorial-gallery--politiken-puls .case-visual-block{max-width:1050px}
+.case-editorial-gallery--politiken-puls .case-visual-images{display:block;width:min(74%,780px);margin:0 auto}
+.case-editorial-gallery--politiken-puls .case-visual-images img{width:100%;height:auto;max-height:none;object-fit:contain}
+.case-editorial-gallery--politiken-puls .case-visual-block--politiken-logo .case-visual-images{width:min(58%,610px)}
+.case-editorial-gallery--politiken-puls .case-visual-block--politiken-illustrations .case-visual-images{width:min(75%,790px)}
+.case-editorial-gallery--politiken-puls .case-visual-block--politiken-mobile .case-visual-images{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.5rem,1.4vw,1.5rem);width:100%}
+.case-editorial-gallery--politiken-puls .case-visual-block--politiken-identity .case-visual-images{width:100%}
+.case-editorial-gallery--politiken-puls .case-visual-block--politiken-copy{min-height:0;margin:0 auto}
+.case-editorial-gallery--politiken-puls .case-visual-block--politiken-copy .case-visual-copy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem}
+.case-editorial-gallery--politiken-puls .case-visual-block--politiken-copy .case-visual-copy h2{grid-column:1/-1}
+.case-editorial-gallery--politiken-puls .case-visual-block--strategy .case-visual-copy{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:700px){.case-editorial-gallery--politiken-puls .case-visual-images,.case-editorial-gallery--politiken-puls .case-visual-block--politiken-logo .case-visual-images{width:100%}.case-editorial-gallery--politiken-puls .case-visual-block--politiken-mobile .case-visual-images{grid-template-columns:repeat(2,minmax(0,1fr))}.case-editorial-gallery--politiken-puls .case-visual-block--strategy .case-visual-copy{grid-template-columns:1fr}}
