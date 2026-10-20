@@ -9,14 +9,34 @@ const sonjaSections = computed(() => project.value?.slug === 'sonja' ? project.v
 const sonjaImage = (name) => project.value?.gallery?.find(item => typeof item !== 'string' && item.src.endsWith('/' + name + '.webp'))
 const sonjaVisuals = computed(() => ['sonjalogo2','sonjatagline','sonjagrafik','sonjainsta','sonjamenu'].map(sonjaImage).filter(Boolean))
 const sonjaBrandVisuals = computed(() => ['sonjaidentitet'].map(sonjaImage).filter(Boolean))
-const galleryItems = computed(() => project.value?.slug === 'sonja' ? [] : project.value?.gallery)
+const galleryItems = computed(() => ['sonja','bufferlo','rf-pantsystem'].includes(project.value?.slug) ? [] : project.value?.gallery)
+const asset = (slug,name) => `${import.meta.env.BASE_URL}projects/${slug}/${name}.webp`
+const coverSrc = computed(() => project.value?.slug === 'rf-pantsystem' ? asset('rf-pantsystem','rfplads') : project.value?.image)
+const openingSections = computed(() => project.value?.slug === 'rf-pantsystem' ? project.value.sections?.slice(0,3) : introductorySections.value)
+const editorialVisuals = computed(() => {
+ if(project.value?.slug === 'bufferlo') return [
+  {layout:'wide',images:['start-2']},
+  {layout:'three',images:['speciale-eksamen-2-4','speciale-eksamen-2','speciale-eksamen-2-2']},
+  {layout:'three',images:['kopi-af-3-teleco-wireless-router-4','kopi-af-3-teleco-wireless-router','kopi-af-3-teleco-wireless-router-2']},
+  {layout:'wide',images:['farver']},{layout:'wide',images:['font']}
+ ]
+ if(project.value?.slug === 'rf-pantsystem') return [
+  {layout:'wide',images:['rfsaveorswap']},{layout:'wide',images:['rfcup']},
+  {layout:'pair',images:['rfplakatorange','rfplakatblaa']},
+  {layout:'wide',images:['rfpladsen']},{layout:'pair',images:['rfbarskilt','rfdonate']},
+  {layout:'wide',images:['rfscan']},
+  {layout:'pair-text',images:['rfapp','rfapp2'],heading:'QR-KODEN OG ORANGE LIFE',paragraphs:project.value.sections?.find(s=>s.heading==='QR-KODEN OG ORANGE LIFE')?.paragraphs || []},
+  {layout:'wide',images:['rforangelife']}
+ ]
+ return []
+})
 const prototypeSection = computed(() => project.value?.slug === "while-in-battle" ? project.value.sections?.find(section => section.heading === "KODET PROTOTYPE PÅ KAMPGNESITE") : null)
 </script>
 
 <template>
   <article v-if="project" class="case-study">
     <div class="case-top"><RouterLink to="/#arbejde">← TILBAGE TIL ARKIVET</RouterLink><span>{{ project.year || 'VISUELT ARKIV' }}</span></div>
-    <div v-if="project.image" class="case-cover"><img :src="project.image" :alt="project.imageAlt || project.title" /></div>
+    <div v-if="coverSrc" class="case-cover"><img :src="coverSrc" :alt="project.imageAlt || project.title" /></div>
     <div class="case-content-surface">
     <div class="case-introduction">
       <header class="case-header">
@@ -30,8 +50,8 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
         <div v-if="project.client"><strong>Kunden</strong><p>{{ project.client }}</p></div>
       </div>
     </div>
-    <div v-if="introductorySections?.length" class="case-sections">
-      <section v-for="(section, index) in introductorySections" :key="index" class="case-text-section">
+    <div v-if="openingSections?.length" class="case-sections">
+      <section v-for="(section, index) in openingSections" :key="index" class="case-text-section">
         <h2>{{ section.heading }}</h2>
         <template v-for="(paragraph, paragraphIndex) in section.paragraphs" :key="paragraphIndex">
           <div v-if="typeof paragraph === 'object'" class="case-subsection">
@@ -59,6 +79,12 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
     </div>
     <div v-if="project.slug === 'sonja'" class="sonja-visual-story sonja-visual-story--brand">
       <figure v-for="(item, index) in sonjaBrandVisuals" :key="index"><img :src="item.src" :alt="item.alt" loading="lazy" /></figure>
+    </div>
+    <div v-if="editorialVisuals.length" class="case-editorial-gallery">
+      <section v-for="(block, blockIndex) in editorialVisuals" :key="blockIndex" class="case-visual-block" :class="'case-visual-block--' + block.layout">
+        <div class="case-visual-images"><figure v-for="name in block.images" :key="name"><img :src="asset(project.slug,name)" :alt="project.title + ' — ' + name" loading="lazy" /></figure></div>
+        <div v-if="block.heading" class="case-visual-copy"><h2>{{ block.heading }}</h2><p v-for="(paragraph,i) in block.paragraphs" :key="i">{{ paragraph }}</p></div>
+      </section>
     </div>
     <div v-if="galleryItems?.length" class="case-gallery" :class="{ 'case-gallery--bufferlo': project.slug === 'bufferlo' }">
       <figure v-for="(item, index) in galleryItems" :key="index">
