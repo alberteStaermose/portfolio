@@ -23,7 +23,13 @@ const project = computed(() => projects.find(item => item.slug === route.params.
     <div v-if="project.sections?.length" class="case-sections">
       <section v-for="(section, index) in project.sections" :key="index" class="case-text-section">
         <h2>{{ section.heading }}</h2>
-        <p v-for="(paragraph, paragraphIndex) in section.paragraphs" :key="paragraphIndex">{{ paragraph }}</p>
+        <template v-for="(paragraph, paragraphIndex) in section.paragraphs" :key="paragraphIndex">
+          <div v-if="typeof paragraph === 'object'" class="case-subsection">
+            <h3>{{ paragraph.subheading }}</h3>
+            <p style="white-space: pre-line">{{ paragraph.text }}</p>
+          </div>
+          <p v-else>{{ paragraph }}</p>
+        </template>
       </section>
     </div>
     <div v-if="project.body" class="case-body"><p>{{ project.body }}</p></div>
