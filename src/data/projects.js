@@ -354,7 +354,22 @@ export const projects = [
     title: 'Blender',
     category: '3D / Eksperimenter',
     year: '',
-    description: 'Et udvalg af 3D-eksperimenter og visuelle studier skabt i Blender.',
+    description: "Opgaven gik ud på at lave en ø i 3D-programmet blender. Med frie tøjler og rig mulighed for at fortolke \"Ø\" gik jeg ellers i gang.",
+    projectType: 'Skoleopgave',
+    role: '3D designer',
+    sections: [
+      { heading: "BRIEF", paragraphs: [
+        "Opgaven gik ud på at lave en ø i 3D-programmet blender. Med frie tøjler og rig mulighed for at fortolke \"Ø\" gik jeg ellers i gang."
+      ] },
+      { heading: "PROCES", paragraphs: [
+        "Jeg havde mange forskellige tanker, og min første tanke var at lave noget man ellers ikke normalt forbinder med en øde ø.",
+        "Jeg startede med at skitsere lidt forskellige ideer, og løbende som jeg skitserede, så jeg noget sjovt ved at kombinere de forskellige idéer til en.",
+        "Min tanke var at skabe 3 små \"historier\" til hver blæksprutte. Den store, kigger på øen, den mellemste kigger på rumskibet, og den lille kigger på rejerne under vandet.",
+        "Der er skabt en mystik omkring historien med øen. Hvad laver dyrene der? og hvorfor suger rumskibet blomsterne op? Dette er til fri fortolkning.",
+        "Øen skulle illustreres om natten, forskellige elementer skulle lyse og øen skulle være våd efter lige at være dukket op til havoverfladen.",
+        "Med lysindfald, forskellige materials og blenderkits, fik jeg skabt en nattestemning, med selvlysende elementer og spejlninger."
+      ] }
+    ],
     image: `${import.meta.env.BASE_URL}projects/blender/blenderen3.webp`,
     imageAlt: '3D-illustration skabt i Blender',
     gallery: [
