@@ -37,7 +37,7 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
       </section>
     </div>
     <div v-if="project.body" class="case-body"><p>{{ project.body }}</p></div>
-    <div v-if="project.gallery?.length" class="case-gallery">
+    <div v-if="project.gallery?.length" class="case-gallery" :class="{ 'case-gallery--bufferlo': project.slug === 'bufferlo' }">
       <figure v-for="(item, index) in project.gallery" :key="index">
         <img :src="typeof item === 'string' ? item : item.src" :alt="typeof item === 'string' ? project.title : (item.alt || project.title)" loading="lazy" />
         <figcaption v-if="item.caption">{{ item.caption }}</figcaption>
