@@ -113,3 +113,65 @@
 .case-gallery figcaption{font-size:.75rem;margin-top:.75rem}
 .case-return{display:inline-block;margin-top:8rem;border-bottom:1px solid;padding-bottom:.6rem;font-size:.75rem;letter-spacing:.08em}
 @media(max-width:600px){.case-gallery{grid-template-columns:1fr}.case-gallery figure:nth-child(3n){grid-column:auto}}
+
+
+/* 06 — Readable editorial case-study typography */
+.case-meta{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(1.5rem,4vw,4rem);
+  max-width:72rem;
+  margin:clamp(3.5rem,7vw,7rem) auto 0;
+  padding:1.6rem 0 2rem;
+  border-top:1px solid #c9c8c1;
+  border-bottom:1px solid #c9c8c1;
+}
+.case-meta strong{
+  display:block;
+  font-size:.72rem;
+  line-height:1.4;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.095em;
+  color:#62615d;
+}
+.case-meta p{
+  margin:.65rem 0 0;
+  font-size:clamp(.98rem,1.2vw,1.15rem);
+  line-height:1.45;
+}
+.case-sections{
+  width:min(100%,46rem);
+  margin:clamp(4.5rem,8vw,8rem) auto 0;
+}
+.case-text-section{margin:0 0 clamp(3.5rem,6vw,6rem)}
+.case-text-section h2{
+  font-size:clamp(1.25rem,2.1vw,1.8rem);
+  line-height:1.2;
+  letter-spacing:-.035em;
+  font-weight:600;
+  margin:0 0 1.5rem;
+}
+.case-text-section p{
+  font-size:clamp(1rem,1.15vw,1.125rem);
+  line-height:1.75;
+  letter-spacing:-.005em;
+  margin:0 0 1.35rem;
+  max-width:68ch;
+  overflow-wrap:break-word;
+}
+.case-subsection{margin:2.5rem 0 0}
+.case-subsection h3{
+  font-size:clamp(1rem,1.35vw,1.2rem);
+  line-height:1.4;
+  font-weight:600;
+  margin:0 0 .7rem;
+}
+.case-subsection p{white-space:pre-line}
+@media(max-width:700px){
+  .case-meta{grid-template-columns:1fr;gap:1.35rem;margin-top:3rem}
+  .case-sections{margin-top:4rem}
+  .case-text-section{margin-bottom:3.5rem}
+  .case-text-section h2{margin-bottom:1.1rem}
+  .case-text-section p{line-height:1.7}
+}
