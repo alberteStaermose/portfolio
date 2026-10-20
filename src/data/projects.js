@@ -102,7 +102,7 @@ export const projects = [
         "Jeg kodede en asset generator der ved at stille på forskellige parametre kunne generere forskellige mønstre."
       ] }
     ],
-    image: `${import.meta.env.BASE_URL}projects/valoer/valorsite.webp`,
+    image: `${import.meta.env.BASE_URL}projects/valoer/valorassetgenerator.webp`,
     imageAlt: 'Valør — visuel identitet og logoanimation',
     gallery: [
       { src: `${import.meta.env.BASE_URL}projects/valoer/valortpe.webp`, alt: 'valoer — valortpe' },
