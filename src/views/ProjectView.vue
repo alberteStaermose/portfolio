@@ -42,14 +42,13 @@ const editorialVisuals = computed(() => {
   {layout:'strategy',heading:'BRANDSTRATEGI',paragraphs:project.value.sections?.find(s=>s.heading==='BRANDSTRATEGI')?.paragraphs || []}
  ]
  if(project.value?.slug === 'while-in-battle') return [
-  {layout:'pair',images:['whileinbatlleplakat','whileplakat']},
-  {layout:'wide',images:['whilestyletyle']},
-  {layout:'pair',images:['whiledancer1','whiledancer2']},
-  {layout:'wide',images:['whilebilledstil']},
-  {layout:'three',images:['whilelightred','whilelightorange','whilelightgreen']},
-  {layout:'three',images:['whilelightblue','whilelightmode','whiledarkmode']},
-  {layout:'pair',images:['whiledefaultmode','whileintro']},
-  {layout:'wide',images:['whilefysiskinstallation']}
+  {layout:'prototype-views',images:['whilelightmode','whiledefaultmode','whiledarkmode']},
+  {layout:'poster',images:['whileinbatlleplakat']},
+  {layout:'outdoor',images:['whileplakat']},
+  {layout:'variants',images:['whilelightblue','whilelightorange','whilelightgreen','whilelightred']},
+  {layout:'installation',images:['whilefysiskinstallation']},
+  {layout:'moodboard',images:['whilebilledstil']},
+  {layout:'dancers',images:['whiledancer1','whiledancer2']}
  ]
  if(project.value?.slug === 'blender') return [
   {layout:'pair',images:['blenderen1','blenderen2']},
@@ -124,6 +123,11 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
     <div v-if="project.slug === 'sonja'" class="sonja-visual-story sonja-visual-story--brand">
       <figure v-for="(item, index) in sonjaBrandVisuals" :key="index"><img :src="item.src" :alt="item.alt" loading="lazy" /></figure>
     </div>
+    <section v-if="prototypeSection" class="case-text-section case-prototype-section case-prototype-section--before-gallery">
+      <h2>{{ prototypeSection.heading }}</h2>
+      <p v-for="(paragraph, index) in prototypeSection.paragraphs" :key="index">{{ paragraph }}</p>
+      <a v-if="project.prototypeUrl" :href="project.prototypeUrl" target="_blank" rel="noopener noreferrer">SE DEN KODEDE PROTOTYPE ↗</a>
+    </section>
     <div v-if="editorialVisuals.length" class="case-editorial-gallery" :class="'case-editorial-gallery--' + project.slug">
       <section v-for="(block, blockIndex) in editorialVisuals" :key="blockIndex" class="case-visual-block" :class="'case-visual-block--' + block.layout">
         <div class="case-visual-images"><figure v-for="name in block.images" :key="name"><img :src="asset(project.slug,name)" :alt="project.title + ' — ' + name" loading="lazy" /></figure></div>
@@ -137,11 +141,7 @@ const prototypeSection = computed(() => project.value?.slug === "while-in-battle
         <figcaption v-if="item.caption">{{ item.caption }}</figcaption>
       </figure>
     </div>
-    <section v-if="prototypeSection" class="case-text-section case-prototype-section">
-      <h2>{{ prototypeSection.heading }}</h2>
-      <p v-for="(paragraph, index) in prototypeSection.paragraphs" :key="index">{{ paragraph }}</p>
-      <a v-if="project.prototypeUrl" :href="project.prototypeUrl" target="_blank" rel="noopener noreferrer">SE DEN KODEDE PROTOTYPE ↗</a>
-    </section>
+
     <RouterLink class="case-return" to="/">← SE FLERE PROJEKTER</RouterLink>
     </div>
   </article>
