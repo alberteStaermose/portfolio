@@ -329,3 +329,35 @@
   .case-gallery img,.case-gallery figure:nth-child(5n + 1) img{max-height:60svh}
   .real-projects{grid-template-columns:1fr}
 }
+
+/* Bufferlo: spacious brand identity plates followed by three-up campaign imagery */
+.case-gallery.case-gallery--bufferlo{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:clamp(.6rem,1.6vw,1.5rem);
+  row-gap:clamp(3rem,7vw,7rem);
+  max-width:1520px;
+  margin-inline:auto;
+  padding-inline:clamp(1.25rem,5vw,5rem);
+}
+.case-gallery--bufferlo figure:nth-child(n){
+  grid-column:auto;
+  min-width:0;
+}
+.case-gallery--bufferlo figure:nth-child(-n+3){
+  grid-column:1/-1;
+  width:min(100%,860px);
+  justify-self:center;
+}
+.case-gallery--bufferlo figure img{
+  width:100%;
+  height:auto;
+  max-height:65svh;
+  object-fit:contain;
+}
+.case-gallery--bufferlo figure:nth-child(-n+3) img{max-height:70svh}
+@media(max-width:700px){
+  .case-gallery.case-gallery--bufferlo{grid-template-columns:1fr;row-gap:3rem}
+  .case-gallery--bufferlo figure:nth-child(n){grid-column:1}
+  .case-gallery--bufferlo figure img{max-height:65svh}
+}
