@@ -59,6 +59,7 @@ export const projects = [
         "Sitet er sat op med togglebutton, der får sitet til at skifte mellem kontrasten, light- og darkmode, og muligheden for at gå tilbage til default som er der hvor kontrasterne mødes og skal symbolisere forestillingen hvor kontrasterne mødes. Da det er en prototype er der kun én version i light og én version, men tanken var at der skulle være et array med flere versioner af light- og darkmode."
       ] }
     ],
+    prototypeUrl: 'https://master--alberteogjosefine.netlify.app',
     image: `${import.meta.env.BASE_URL}projects/while-in-battle/whileplakat.webp`,
     imageAlt: 'While in Battle — kampagne og digitalt design',
     gallery: [
